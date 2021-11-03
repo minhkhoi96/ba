@@ -1,0 +1,72 @@
+<template>
+  <div >
+    <h1>Welche Dezimalzahl wird durch folgende hexadezimalzahl dargestellt?</h1>
+
+    <h1> {{hex}} </h1>
+
+    <input v-model="result" placeholder="edit me" />
+
+    <button v-on:click="reset">
+    <h1>RESET</h1>
+    </button>
+    <h1>{{lösung}}</h1>
+    <button v-on:click="check">
+    <h1>abgeben</h1>
+    <h1 v-if="resultat&&abgabe"> Your aweee</h1>
+    <h1 v-else-if="abgabe"> Nope</h1>
+    </button>
+    
+  </div>
+</template>
+
+
+
+<script>
+
+
+
+export default {
+  data(){
+    return{
+      hex:'',
+      result:0,
+      lösung:0,
+      abgabe:false,
+      resultat:false
+    }
+  },
+
+  created: function(){
+    this.init()
+  },
+
+  methods: {
+    init(){
+      this.genHexString();
+    },
+    genHexString() {
+      this.hex='';
+      let pre =0;
+      for (let i = 0; i < 3; ++i) {
+        pre = (Math.floor(Math.random() * 16));
+        this.lösung=this.lösung+pre*Math.pow(16,i);
+        this.hex = pre.toString(16).toUpperCase()+this.hex;
+      }
+      
+    },
+    reset(){
+      this.lösung=0;
+      this.genHexString()
+
+    },
+    check(){
+      if(this.lösung==this.result)
+        this.resultat=true
+      else  
+        this.resultat=false
+      this.abgabe=true
+    }
+
+  }
+}
+</script>
