@@ -8,12 +8,18 @@ import AddBin from '../views/AddBin.vue'
 import Römisch from '../views/Römisch.vue'
 import Gemischtes from '../views/Gemischtes.vue'
 import Hex from '../views/Hex.vue'
+import Biber from '../views/Bibercoins.vue'
 
 const routes = [
   {
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/coins',
+    name: 'Coins',
+    component: Biber
   },
   {
     path: '/about',

@@ -32,6 +32,11 @@
     <router-link to="/MIX">Lass mischen</router-link>
   </div>
 
+  <div class="box">
+    <router-link to="/coins">Bibercoins optimieren</router-link>
+  </div>
+  
+
  <h2>hiho</h2>
   
 </template>
