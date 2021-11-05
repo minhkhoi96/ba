@@ -7,11 +7,21 @@
 
     <h1>{{bag}}</h1>
     <h1>{{array}}</h1>
-    <h1>{{up}}</h1>
+    <h1>{{sum}}</h1>
 
-    
+    <button> 1 </button>
 
-
+    <!--<button v-on:click=" ">1000</button>  -->
+    <button > 1 </button>
+    <button> 2 </button>
+    <button> 4 </button>
+    <button> 8 </button>
+    <button> 16 </button>
+    <button> 32 </button>
+    <button> 
+      <img src="@/assets/sixtyfour.png"  />
+       </button>
+   
 
     <button v-on:click="reset">
     <h1>RESET</h1>
@@ -43,7 +53,8 @@ export default {
            rand256:1,
            bag:[],
            array:new Array(),
-           lösung:0
+           lösung:0,
+           sum:0
           
 
        }
@@ -63,6 +74,7 @@ export default {
            
         },
         reset(){
+          this.sum=0,
           this.rand1=(Math.floor(Math.random() * 4)),
           this.rand2=(Math.floor(Math.random() * 4)),
            this.rand4=(Math.floor(Math.random() * 4)),
@@ -81,48 +93,57 @@ export default {
           case 0:
             for(let i=0;i<this.rand1;i++){
             this.bag.push(1);
-            }
+          
+            }  this.sum+=this.rand1*1;
             break;
 
           case 1:
             for(let i=0;i<this.rand2;i++){
             this.bag.push(2);
-            }
+            
+            }this.sum+=this.rand2*2;
             break;
 
           case 2:
             for(let i=0;i<this.rand4;i++){
             this.bag.push(4);
-            }
+           
+            } this.sum+=this.rand4*4;
             break;
 
           case 3:
             for(let i=0;i<this.rand8;i++){
             this.bag.push(8);
-            }
+            
+            }this.sum+=this.rand8*8;
             break;
 
           case 4:
             for(let i=0;i<this.rand16;i++){
             this.bag.push(16);
-            }
+             
+            }this.sum+=this.rand16*16;
             break;
 
           case 5:
             for(let i=0;i<this.rand32;i++){
             this.bag.push(32);
-            }
+             
+            }this.sum+=this.rand32*32;
             break;
 
           case 6:
             for(let i=0;i<this.rand64;i++){
             this.bag.push(64);
-            }
+             
+            }this.sum+=this.rand64*64;
             break;
 
           case 7:
+            this.sum+=this.rand128*128;
             for(let i=0;i<this.rand128;i++){
             this.bag.push(128);
+             
             }
             break;
 
