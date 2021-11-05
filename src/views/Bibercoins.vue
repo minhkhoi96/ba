@@ -9,18 +9,36 @@
     <h1>{{array}}</h1>
     <h1>{{sum}}</h1>
 
-    <button> 1 </button>
+    
 
     <!--<button v-on:click=" ">1000</button>  -->
-    <button > 1 </button>
-    <button> 2 </button>
-    <button> 4 </button>
-    <button> 8 </button>
-    <button> 16 </button>
-    <button> 32 </button>
+    <button> 
+      <img src="@/assets/one.png"  />
+    </button>
+
+    <button> 
+      <img src="@/assets/two.png"  />
+    </button>
+
+    <button> 
+      <img src="@/assets/four.png"  />
+    </button>
+
+    <button> 
+      <img src="@/assets/eight.png"  />
+    </button>
+
+    <button> 
+      <img src="@/assets/sixteen.png"  />
+    </button>
+
+    <button> 
+      <img src="@/assets/thirtytwo.png"  />
+    </button>
+
     <button> 
       <img src="@/assets/sixtyfour.png"  />
-       </button>
+    </button>
    
 
     <button v-on:click="reset">
