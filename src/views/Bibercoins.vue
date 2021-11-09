@@ -6,45 +6,92 @@
     <h1>Wert behalten? </h1>
 
     <h1>{{bag}}</h1>
-    <h1>{{array}}</h1>
-    <h1>{{sum}}</h1>
+   
+    <h1>{{lösung}}</h1>
 
     
 
     <!--<button v-on:click=" ">1000</button>  -->
-    <button> 
+    <button v-on:click="add1();result++"> 
       <img src="@/assets/one.png"  />
     </button>
 
-    <button> 
+    <button v-on:click="add2();result+=2"> 
       <img src="@/assets/two.png"  />
     </button>
 
-    <button> 
+    <button v-on:click="add4();result+=4"> 
       <img src="@/assets/four.png"  />
     </button>
 
-    <button> 
+    <button v-on:click="add8();result+=8"> 
       <img src="@/assets/eight.png"  />
     </button>
 
-    <button> 
+    <button v-on:click="add16();result+=16"> 
       <img src="@/assets/sixteen.png"  />
     </button>
 
-    <button> 
+    <button v-on:click="add32();result+=32"> 
       <img src="@/assets/thirtytwo.png"  />
     </button>
 
-    <button> 
+    <button v-on:click="add64();result+=64"> 
       <img src="@/assets/sixtyfour.png"  />
     </button>
    
+    <button v-on:click="check">
+    <h1>abgeben</h1>
+    <h1 v-if="resultat&&abgabe"> Your aweee</h1>
+ <h1 v-else-if="abgabe"> Nope</h1>
+  </button>
 
     <button v-on:click="reset">
     <h1>RESET</h1>
     </button>
 
+
+    <div v-for='index in length1' :key='index'>
+       <button v-on:click="bag1.pop();length1--;result--" style="float:left">
+              <img src="@/assets/one.png" style="width:100px;height:100px;float:left" />
+              </button>
+    </div>
+
+    <div v-for='index in length2' :key='index'>
+       <button v-on:click="bag2.pop();length2--;result-=2" style="float:left">
+              <img src="@/assets/two.png" style="width:100px;height:100px;float:left" />
+              </button>
+    </div>
+
+    <div v-for='index in length4' :key='index'>
+       <button v-on:click="bag4.pop();length4--;result-=4" style="float:left">
+              <img src="@/assets/four.png" style="width:100px;height:100px;float:left" />
+              </button>
+    </div>
+
+    <div v-for='index in length8' :key='index'>
+       <button v-on:click="bag8.pop();length8--;result-=8" style="float:left">
+              <img src="@/assets/eight.png" style="width:100px;height:100px;float:left" />
+              </button>
+    </div>
+
+    <div v-for='index in length16' :key='index'>
+       <button v-on:click="bag16.pop();length16--;result-=16" style="float:left">
+              <img src="@/assets/sixteen.png" style="width:100px;height:100px;float:left" />
+              </button>
+    </div>
+
+    <div v-for='index in length32' :key='index'>
+       <button v-on:click="bag32.pop();length32--;result-=32" style="float:left">
+              <img src="@/assets/thirtytwo.png" style="width:100px;height:100px;float:left" />
+              </button>
+    </div>
+
+    <div v-for='index in length64' :key='index'>
+       <button v-on:click="bag64.pop();length64--;result-=64" style="float:left">
+              <img src="@/assets/sixtyfour.png" style="width:100px;height:100px;float:left" />
+              </button>
+    </div>
    
 
     
@@ -70,10 +117,25 @@ export default {
            rand128:(Math.floor(Math.random() * 2)),
            rand256:1,
            bag:[],
-           array:new Array(),
+           bag1:[],
+           length1:0,  
+           bag2:[],
+           length2:0,
+           bag4:[],
+           length4:0,
+           bag8:[],
+           length8:0,
+           bag16:[],
+           length16:0,
+           bag32:[],
+           length32:0,
+           bag64:[],
+           length64:0,  
            lösung:0,
-           sum:0
-          
+           sum:0,
+           abgabe:false,
+           result:0,
+           resultat:false
 
        }
    },
@@ -85,14 +147,39 @@ export default {
 
         init(){
             this.bag=[];
+            this.bag1=[];
+            this.length1=0;
+            this.bag2=[];
+            this.length2=0;
+            this.bag4=[];
+            this.length4=0;
+            this.bag8=[];
+            this.length8=0;
+            this.bag16=[];
+            this.length16=0;
+            this.bag32=[];
+            this.length32=0;
+            this.bag64=[];
+            this.length64=0;
+            this.result=0;
+            this.resultat=false;
+            this.abgabe=false;
             for(let i=0;i<8;i++){
                 this.add(i)
             }
            
            
         },
+        check(){
+          if(this.lösung==this.result)
+            this.resultat=true
+          else 
+            this.resultat=false
+          this.abgabe=true
+
+        },
         reset(){
-          this.sum=0,
+          this.lösung=0,
           this.rand1=(Math.floor(Math.random() * 4)),
           this.rand2=(Math.floor(Math.random() * 4)),
            this.rand4=(Math.floor(Math.random() * 4)),
@@ -112,53 +199,53 @@ export default {
             for(let i=0;i<this.rand1;i++){
             this.bag.push(1);
           
-            }  this.sum+=this.rand1*1;
+            }  this.lösung+=this.rand1*1;
             break;
 
           case 1:
             for(let i=0;i<this.rand2;i++){
             this.bag.push(2);
             
-            }this.sum+=this.rand2*2;
+            }this.lösung+=this.rand2*2;
             break;
 
           case 2:
             for(let i=0;i<this.rand4;i++){
             this.bag.push(4);
            
-            } this.sum+=this.rand4*4;
+            } this.lösung+=this.rand4*4;
             break;
 
           case 3:
             for(let i=0;i<this.rand8;i++){
             this.bag.push(8);
             
-            }this.sum+=this.rand8*8;
+            }this.lösung+=this.rand8*8;
             break;
 
           case 4:
             for(let i=0;i<this.rand16;i++){
             this.bag.push(16);
              
-            }this.sum+=this.rand16*16;
+            }this.lösung+=this.rand16*16;
             break;
 
           case 5:
             for(let i=0;i<this.rand32;i++){
             this.bag.push(32);
              
-            }this.sum+=this.rand32*32;
+            }this.lösung+=this.rand32*32;
             break;
 
           case 6:
             for(let i=0;i<this.rand64;i++){
             this.bag.push(64);
              
-            }this.sum+=this.rand64*64;
+            }this.lösung+=this.rand64*64;
             break;
 
           case 7:
-            this.sum+=this.rand128*128;
+            this.lösung+=this.rand128*128;
             for(let i=0;i<this.rand128;i++){
             this.bag.push(128);
              
@@ -170,7 +257,35 @@ export default {
           
         }
         
-    }
+    },
+    add1(){
+      this.bag1.push(1);
+      this.length1++;
+    },
+    add2(){
+      this.bag2.push(1);
+      this.length2++;
+    },
+    add4(){
+      this.bag4.push(1);
+      this.length4++;
+    },
+    add8(){
+      this.bag8.push(1);
+      this.length8++;
+    },
+    add16(){
+      this.bag16.push(1);
+      this.length16++;
+    },
+    add32(){
+      this.bag32.push(1);
+      this.length32++;
+    },
+    add64(){
+      this.bag64.push(1);
+      this.length64++;
+    },
 
     }
 }
