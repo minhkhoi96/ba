@@ -132,7 +132,7 @@ export default {
            bag64:[],
            length64:0,  
            lösung:0,
-           sum:0,
+           
            abgabe:false,
            result:0,
            resultat:false
@@ -171,7 +171,8 @@ export default {
            
         },
         check(){
-          if(this.lösung==this.result)
+          if(this.lösung==this.result&&this.length1<=1&&this.length2<=1&&this.length4<=1&&this.length8<=1&&this.length16<=1
+          &&this.length32<=1&&this.length64<=1)
             this.resultat=true
           else 
             this.resultat=false
