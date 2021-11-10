@@ -20,9 +20,12 @@
     <router-link to="/addBin">Binäre Zahlen addieren</router-link>
   </div>
 
+   <router-link to="/Hex">
    <div class="box">
-    <router-link to="/Hex">hexadezimale Zahlen lesen</router-link>
+       <img src="@/assets/one.png"  />
+    hexadezimale Zahlen lesen
   </div>
+  </router-link>
 
    <div class="box">
     <router-link to="/kniffliges">Kniffliges</router-link>
