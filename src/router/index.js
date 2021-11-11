@@ -3,7 +3,7 @@ import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Binary from '../views/Binary.vue'
 import Umwandeln from '../views/Umwandeln.vue'
-import Kniffliges from '../views/Kniffliges.vue'
+import Dezimal from '../views/Dezimal.vue'
 import AddBin from '../views/AddBin.vue'
 import Römisch from '../views/Römisch.vue'
 import Gemischtes from '../views/Gemischtes.vue'
@@ -27,9 +27,9 @@ const routes = [
     component: About
   },
   {
-    path: '/kniffliges',
-    name: 'Kniffliges',
-    component: Kniffliges
+    path: '/dezimal',
+    name: 'Dezimal',
+    component: Dezimal
   },
   {
     path: '/umwandeln',

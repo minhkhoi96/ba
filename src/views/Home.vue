@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h2>Viel Spass mit den Rätsel zu "einfache Informatik 7-8" :)))))</h2>
+    <h2>HALLO HIER FINDEST DU AUFGABEN ZU EINFACH INFORMATIK 7-8 ZUM KAPITEL DARSTELLUNG VON ZAHLEN</h2>
     
   </div>
   <div class="box">
@@ -28,7 +28,7 @@
   </router-link>
 
    <div class="box">
-    <router-link to="/kniffliges">Kniffliges</router-link>
+    <router-link to="/dezimal">Dezimal zu Binär</router-link>
   </div>
 
   <div class="box">

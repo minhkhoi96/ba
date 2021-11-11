@@ -39,7 +39,8 @@
  -->
 <div v-for='index in lengthT' :key='index'>
               <button v-on:click="array[0].pop();lengthT--;curr-=1000;abgabe=false" style="float:left">
-              <img src="@/assets/logo.png" style="width:150px;height:150px;float:left" />
+              <!--<img src="@/assets/logo.png" style="width:150px;height:150px;float:left" /> -->
+              <h1>1000</h1>
               </button>
             </div>
  
