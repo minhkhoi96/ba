@@ -1,23 +1,27 @@
 <template>
   <div class="home">
-    <h2>HALLO HIER FINDEST DU AUFGABEN ZU EINFACH INFORMATIK 7-8 ZUM KAPITEL DARSTELLUNG VON ZAHLEN</h2>
+    <h2>HALLO HIER FINDEST DU AUFGABEN ZU EINFACH INFORMATIK 7-8 ZUM KAPITEL DARSTELLUNG VON ZAHLEN :3</h2>
     
   </div>
   <div class="box">
     <router-link to="/umwandeln">Kartendarstellung</router-link>
+     <img src="@/assets/one.png"  />
   </div>
 
    <div class="box">
     <router-link to="/binary">Binaere Zahlen interpretieren</router-link>
+     <img src="@/assets/one.png"  />
   </div>
 
 <div class="box">
     <router-link to="/römisch">Vorrömische Zahlen lesen</router-link>
+     <img src="@/assets/one.png"  />
   </div>
   
 
    <div class="box">
     <router-link to="/addBin">Binäre Zahlen addieren</router-link>
+     <img src="@/assets/two.png"  />
   </div>
 
    <router-link to="/Hex">
@@ -29,14 +33,28 @@
 
    <div class="box">
     <router-link to="/dezimal">Dezimal zu Binär</router-link>
+     <img src="@/assets/two.png"  />
   </div>
 
   <div class="box">
-    <router-link to="/MIX">Lass mischen</router-link>
+    <router-link to="/MIX">3-adische Darstellung lesen</router-link>
+     <img src="@/assets/one.png"  />
   </div>
 
   <div class="box">
     <router-link to="/coins">Bibercoins optimieren</router-link>
+    <img src="@/assets/four.png"  />
+  </div>
+
+  <div class="box">
+    <router-link to="/wechseln">Wechseln</router-link>
+    <img src="@/assets/two.png"  />
+  </div>
+
+
+  <div class="box">
+    <router-link to="/challenge">Challenge</router-link>
+    <img src="@/assets/four.png"  />
   </div>
   
 
@@ -64,8 +82,8 @@ export default {
  }
 
  .box {
-   padding: 100px 0;
-   width: 400px;
+   padding: 50px 0;
+   width: 300px;
    text-align: center;
    background: #ddd;
    margin: 20px;

@@ -9,6 +9,8 @@ import Römisch from '../views/Römisch.vue'
 import Gemischtes from '../views/Gemischtes.vue'
 import Hex from '../views/Hex.vue'
 import Biber from '../views/Bibercoins.vue'
+import Wechseln from '../views/Wechseln.vue'
+import Challenge from '../views/Challenge.vue'
 
 const routes = [
   {
@@ -60,7 +62,18 @@ const routes = [
     path: '/hex',
     name: 'Hex',
     component: Hex
+  },
+  {
+    path: '/wechseln',
+    name: 'Wechseln',
+    component: Wechseln
+  },
+  {
+    path: '/challenge',
+    name: 'Challenge',
+    component: Challenge
   }
+
 
  
   

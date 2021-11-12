@@ -27,7 +27,7 @@
 export default {
   data(){
     return {
-      dec: Math.floor(Math.random() * 1000) + 1,
+      dec: Math.floor(Math.random() * 500) + 1,
       result:'',
       abgabe:false,
       resultat:false,

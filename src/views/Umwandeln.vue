@@ -38,7 +38,7 @@
    WE PRINT ALLL OUR TAUSENDER
  -->
 <div v-for='index in lengthT' :key='index'>
-              <button v-on:click="array[0].pop();lengthT--;curr-=1000;abgabe=false" style="float:left">
+              <button v-on:click="array[0].pop();lengthT--;curr-=1000;abgabe=false" style="float:left;width:100px">
               <!--<img src="@/assets/logo.png" style="width:150px;height:150px;float:left" /> -->
               <h1>1000</h1>
               </button>
@@ -49,20 +49,22 @@
    WE PRINT ALLL OUR Hunderter
  -->
 <div v-for='index in lengthH' :key='index'>
-              <button v-on:click="array[1].pop();lengthH--;curr-=100;abgabe=false" style="float:left">
-              <img src="@/assets/logo.png" style="width:100px;height:100px;float:left" />
+              <button v-on:click="array[1].pop();lengthH--;curr-=100;abgabe=false" style="float:left;width:100px">
+              <!--<img src="@/assets/logo.png" style="width:100px;height:100px;float:left" />-->
+              <h1>100</h1>
               </button>
             </div>
 
 <div v-for='index in lengthZ' :key='index'>
-              <button v-on:click="array[2].pop();lengthZ--;curr-=10;abgabe=false" style="float:left">
-              <img src="@/assets/logo.png" style="width:60px;height:60px;float:left" />
+              <button v-on:click="array[2].pop();lengthZ--;curr-=10;abgabe=false" style="float:left;width:100px">
+              <h1>10</h1>
               </button>
             </div>
 
 <div v-for='index in lengthE' :key='index'>
-              <button v-on:click="array[3].pop();lengthE--;curr-=1;abgabe=false" style="float:left">
-              <img src="@/assets/logo.png" style="width:30px;height:30px;float:left" />
+              <button v-on:click="array[3].pop();lengthE--;curr-=1;abgabe=false" style="float:left;width:100px">
+              
+              <h1>1</h1>
               </button>
             </div>
  

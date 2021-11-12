@@ -2,7 +2,7 @@
   <div >
     <h1>Welche Dezimalzahl wird durch folgende hexadezimalzahl dargestellt?</h1>
 
-    <h1> {{hex}} </h1>
+    <h1>{{hex}}<h6 style="display:inline;font-size:12px">16</h6></h1>
 
     <input v-model="result" placeholder="edit me" />
 
