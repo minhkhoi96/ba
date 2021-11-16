@@ -47,7 +47,7 @@
   </div>
 
   <div class="box">
-    <router-link to="/wechseln">Wechseln</router-link>
+    <router-link to="/wechseln">Münzen Tauschen</router-link>
     <img src="@/assets/two.png"  />
   </div>
 
@@ -78,7 +78,7 @@ export default {
 
 <style>
  #Home{
-   background: green;
+   background: rgba(43, 33, 33, 0.137);
  }
 
  .box {

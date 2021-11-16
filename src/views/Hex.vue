@@ -9,7 +9,7 @@
     <button v-on:click="reset">
     <h1>RESET</h1>
     </button>
-    <h1>{{lösung}}</h1>
+    
     <button v-on:click="check">
     <h1>abgeben</h1>
     <h1 v-if="resultat&&abgabe"> Your aweee</h1>

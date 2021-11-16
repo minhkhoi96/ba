@@ -3,7 +3,7 @@
     <h1>Welche Dezimalzahl wird durch folgende binäre Zahl ausgedrückt?</h1>
   </div>
 
-   <!--  <h1>{{val}}</h1>  -->
+    <h1>{{val}}</h1>  
   <h1>{{binary}}<h6 style="display:inline;font-size:12px">2</h6></h1>
 <input v-model="result" placeholder="edit me" />
 <p>Message is: {{ result }}</p>

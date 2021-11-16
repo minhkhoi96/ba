@@ -96,6 +96,8 @@
 
     
   </div>
+
+  <h2>hiho</h2>
 </template>
 
 
@@ -164,7 +166,7 @@ export default {
             this.result=0;
             this.resultat=false;
             this.abgabe=false;
-            for(let i=0;i<8;i++){
+            for(let i=0;i<7;i++){
                 this.add(i)
             }
            
