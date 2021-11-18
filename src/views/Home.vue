@@ -14,7 +14,7 @@
   </div>
 
 <div class="box">
-    <router-link to="/römisch">Vorrömische Zahlen lesen</router-link>
+    <router-link to="/roemisch">Vorrömische Zahlen lesen</router-link>
      <img src="@/assets/one.png"  />
   </div>
   

@@ -49,7 +49,7 @@ const routes = [
     component: AddBin
   },
   {
-    path: '/römisch',
+    path: '/roemisch',
     name: 'Römisch',
     component: Römisch
   },
