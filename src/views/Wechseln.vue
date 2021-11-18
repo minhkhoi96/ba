@@ -6,6 +6,8 @@
         am Schluss weniger Geldscheine mit sich tragen muss? :3
     </h1>
 
+    <button class="ui button toggle">OFF</button>
+
     <div>
     <button v-on:click="reset">
         reset
