@@ -3,7 +3,7 @@
     <h1>Stelle die folgende Zahl mit den folgenden Karten dar:</h1>
     
   <button v-on:click="check">
-  <h1 style="color:green;background:red">ABGEBEN</h1>
+  <h1>ABGEBEN</h1>
   <h1 v-if="resultat&&abgabe"> Your aweee</h1>
  <h1 v-else-if="abgabe"> Nope</h1>
   </button>

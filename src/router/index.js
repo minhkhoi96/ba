@@ -10,13 +10,19 @@ import Gemischtes from '../views/Gemischtes.vue'
 import Hex from '../views/Hex.vue'
 import Biber from '../views/Bibercoins.vue'
 import Wechseln from '../views/Wechseln.vue'
-import Challenge from '../views/Challenge.vue'
+import Kartenaddition from '../views/Kartenaddition.vue'
+import Drag from '../views/DragDrop.vue'
 
 const routes = [
   {
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/',
+    name: 'drag',
+    component: Drag
   },
   {
     path: '/coins',
@@ -69,9 +75,9 @@ const routes = [
     component: Wechseln
   },
   {
-    path: '/challenge',
-    name: 'Challenge',
-    component: Challenge
+    path: '/addition',
+    name: 'Addition',
+    component: Kartenaddition
   }
 
 

@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h2>HSUPPP HIER Fhiiiiiiiii ZU EINFACH INFORMATIK 7-8 ZUM KAPITEL DARSTELLUNG VON ZAHLEN :3</h2>
+    <h2>Hallo hier findest du aufgaben zum buch Einfach Informatik 7-8 ZUM KAPITEL DARSTELLUNG VON ZAHLEN :3</h2>
     
   </div>
   <div class="box">
@@ -53,7 +53,12 @@
 
 
   <div class="box">
-    <router-link to="/challenge">Challenge</router-link>
+    <router-link to="/addition">Kartenaddition</router-link>
+    <img src="@/assets/two.png"  />
+  </div>
+
+  <div class="box">
+    <router-link to="/drag">DRAG</router-link>
     <img src="@/assets/four.png"  />
   </div>
   
