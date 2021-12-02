@@ -11,7 +11,7 @@ import Hex from '../views/Hex.vue'
 import Biber from '../views/Bibercoins.vue'
 import Wechseln from '../views/Wechseln.vue'
 import Kartenaddition from '../views/Kartenaddition.vue'
-import Drag from '../views/DragDrop.vue'
+
 
 const routes = [
   {
@@ -19,11 +19,7 @@ const routes = [
     name: 'Home',
     component: Home
   },
-  {
-    path: '/',
-    name: 'drag',
-    component: Drag
-  },
+  
   {
     path: '/coins',
     name: 'Coins',

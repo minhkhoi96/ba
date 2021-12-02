@@ -1,4 +1,6 @@
 <template>
+
+  <h1> [HIER KOMMT EIN BILD REIN]</h1>
   <div class="home">
     <h2>Hallo hier findest du aufgaben zum buch Einfach Informatik 7-8 ZUM KAPITEL DARSTELLUNG VON ZAHLEN :3</h2>
     
@@ -57,10 +59,7 @@
     <img src="@/assets/two.png"  />
   </div>
 
-  <div class="box">
-    <router-link to="/drag">DRAG</router-link>
-    <img src="@/assets/four.png"  />
-  </div>
+ 
   
 
  <h2>hiho</h2>

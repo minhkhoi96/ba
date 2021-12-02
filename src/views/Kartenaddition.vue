@@ -86,20 +86,100 @@
     <h1>   </h1>
     <h1>   </h1>
     <h1>   </h1>
-    <div>
     
     
+    
+
+ 
+     
+
+
     <div class="superbox" >
+     <div style="display:flex">   
     <p> Schritt 1: Karten zusammen tun</p>
-    <div style="display:flex">
-    <button v-on:click="reset">-</button> <p>1000 </p> <button>+</button>
-    <button>-</button> <p>100 </p> <button>+</button>
-    <button>-</button> <p>10 </p> <button>+</button>
-    <button>-</button> <p>1</p> <button>+</button>
-    </div>
+   
+    <button v-on:click="if (s1t!=0) {s1t--;s1res-=1000;}">-</button> <p>1000 </p> <button v-on:click="s1t++;s1res+=1000">+</button>
+    <button v-on:click="if (s1h!=0) {s1t--;s1res-=100;}">-</button> <p>100 </p> <button v-on:click="s1h++;s1res+=100">+</button>
+    <button v-on:click="if (s1z!=0) {s1t--;s1res-=10;}">-</button> <p>10 </p> <button v-on:click="s1z++;s1res+=10">+</button>
+    <button v-on:click="if (s1e!=0) {s1t--;s1res-=1;}">-</button> <p>1</p> <button v-on:click="s1e++;s1res+=1">+</button>
     </div>
 
+    <!-- wir drucken schritt1 aus-->
+    <div style="display:flex;;flex-direction: column;">
+   <!-- <div>
+      <template v-for='index in s1zt' :key='index'>
+       <button  v-on:click="s1zt--">
+           10000
+       </button>
+       </template>
     </div>
+     <button v-on:click=" s1zt--">-</button> <p>10000 </p> <button v-on:click="s1zt++">+</button>-->
+
+    <div>
+      <template v-for='index in s1t' :key='index'>
+       <button  v-on:click="s1t--;s1res-=1000">
+           1000
+       </button>
+       </template>
+    </div>
+    <div>
+       <template v-for='index in s1h' :key='index'>
+       <button  v-on:click="s1h--;s1res-=100">
+           100
+       </button>
+       </template>
+       </div>
+<div>
+       <template v-for='index in s1z' :key='index'>
+       <button v-on:click="s1z--;s1res-=10" >
+           10
+       </button>
+       </template>
+       </div>
+<div>
+       <template v-for='index in s1e' :key='index'>
+       <button  v-on:click="s1e--;s1res-=1">
+           1
+       </button>
+       </template>
+</div>
+    </div>
+      <!-- wir drucken schritt1 aus-->
+<button v-on:click="checks1">
+ Schritt 1 prüfen
+ 
+<h1 v-if="s1resultat&&abgabe"> Your aweee</h1>
+ <h1 v-else-if="abgabe"> Nope</h1>
+</button>
+<p>{{s1sum}}</p>
+    </div> 
+
+
+<!-- schritt 2 -->
+
+<div>
+     <h1> 
+         
+    </h1>
+    <h1> Schritt 2 </h1>
+    <p> nun tauschen wir solange karten aus, bis wir eine korrekte Kartendarstellung </p>
+
+    <button>
+        10 hunderter gegen 1 tausend
+    </button>
+
+    <button>
+        10 zehner gegen 1 hunderter
+    </button>
+
+    <button>
+        10 einer gegen 1 zehner
+    </button>
+
+   
+</div>
+
+    
 </template>
 
 
@@ -119,8 +199,19 @@ export default {
             h2:this.random(0,10),
             z2:this.random(0,10),
             e2:this.random(0,10),
+            s1t:0,
+            s1h:0,
+            s1z:0,
+            s1e:0,
+            s1zt:0,
             sum1:0,
-            sum2:0
+            sum2:0,
+            s1sum:0,
+            s1res:0,
+            s1resultat:false,
+            abgabe:false,
+            locked:true
+            
             
         }
     },
@@ -133,11 +224,19 @@ export default {
             return Math.floor(Math.random() * (max - min)) + min;
         },
         init(){
-            this.calc()
+            this.calc();
+            this.s1sum = this.sum1+this.sum2;
         },
         calc(){
             this.sum1=this.t1*1000+this.h1*100+this.z1*10+this.e1
             this.sum2=this.t2*1000+this.h2*100+this.z2*10+this.e2
+        },
+        checks1(){
+            if (this.s1res==this.s1sum )
+                this.s1resultat=true;
+            else this.s1resultat=false;
+            this.abgabe=true;
+            
         }
     }
 }
