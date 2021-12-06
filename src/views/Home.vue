@@ -1,6 +1,6 @@
 <template>
 
-  <h1> [HAHAHAHAHA]</h1>
+  <h1> [BILDDD]</h1>
   <div class="home">
     <h2>Hallo hier findest du aufgaben zum buch Einfach Informatik 7-8 ZUM KAPITEL DARSTELLUNG VON ZAHLEN :3</h2>
     
