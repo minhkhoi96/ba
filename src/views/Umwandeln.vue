@@ -32,44 +32,54 @@
     <img src="@/assets/logo.png" style="width:50px;height:60px;">
   </button>
   -->
-       <h1></h1>
+       <h1> </h1>
     
   <!--
    WE PRINT ALLL OUR TAUSENDER
  -->
+ <div style="display:flex;;flex-direction: column;float:left;row-gap:10px">
 <div v-for='index in lengthT' :key='index'>
-              <button v-on:click="array[0].pop();lengthT--;curr-=1000;abgabe=false" style="float:left" >
+              
+              <button v-on:click="array[0].pop();lengthT--;curr-=1000;abgabe=false"  >
               <!--<img src="@/assets/logo.png" style="width:150px;height:150px;float:left" /> -->
               <h1>1000</h1>
               </button>
             </div>
- 
+        <h1> </h1>
+ </div>
 
    <!--
    WE PRINT ALLL OUR Hunderter
  -->
+<div style="display:flex;;flex-direction: column;float:left;row-gap:10px">
 <div v-for='index in lengthH' :key='index'>
-              <button v-on:click="array[1].pop();lengthH--;curr-=100;abgabe=false" style="float:left" >
+              
+              <button v-on:click="array[1].pop();lengthH--;curr-=100;abgabe=false"  >
               <!--<img src="@/assets/logo.png" style="width:100px;height:100px;float:left" />-->
               <h1>100</h1>
               </button>
             </div>
+</div>
 
+<div style="display:flex;;flex-direction: column;float:left;row-gap:10px">
 <div v-for='index in lengthZ' :key='index'>
-              <button v-on:click="array[2].pop();lengthZ--;curr-=10;abgabe=false" style="float:left">
+              <button v-on:click="array[2].pop();lengthZ--;curr-=10;abgabe=false" >
               <h1>10</h1>
               </button>
             </div>
+</div>
 
+<div style="display:flex;;flex-direction: column;float:left;row-gap:10px">
 <div v-for='index in lengthE' :key='index'>
-              <button v-on:click="array[3].pop();lengthE--;curr-=1;abgabe=false" style="float:left">
+              <button v-on:click="array[3].pop();lengthE--;curr-=1;abgabe=false" >
               
               <h1>1</h1>
               </button>
             </div>
+</div>
  
  <h1></h1>
-
+ 
 
 
 </template>
