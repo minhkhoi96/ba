@@ -48,10 +48,7 @@
     <img src="@/assets/four.png"  />
   </div>
 
-  <div class="box">
-    <router-link to="/wechseln">Münzen Tauschen</router-link>
-    <img src="@/assets/two.png"  />
-  </div>
+
 
 
   <div class="box">
