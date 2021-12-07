@@ -115,6 +115,14 @@
     </div>
      <button v-on:click=" s1zt--">-</button> <p>10000 </p> <button v-on:click="s1zt++">+</button>-->
 
+     <div>
+      <template v-for='index in s1zt' :key='index'>
+       <button>
+           10000
+       </button>
+       </template>
+    </div>
+
     <div>
       <template v-for='index in s1t' :key='index'>
        <button  v-on:click="s1t--;s1res-=1000">
@@ -155,7 +163,9 @@
     </div> 
 
 
-<!-- schritt 2 -->
+<!-- schritt 2 
+if (s1t!=0) {s1t--;s1res-=1000;}
+-->
 
 <div>
      <h1> 
@@ -164,17 +174,32 @@
     <h1> Schritt 2 </h1>
     <p> nun tauschen wir solange karten aus, bis wir eine korrekte Kartendarstellung </p>
 
-    <button>
+    <button v-on:click="if(s1t>9){s1t-=10;s1zt++;}">
+        10 tausender gegen 1 zehntausend
+    </button>
+
+    <button v-on:click="if(s1h>9){s1h-=10;s1t++;}">
         10 hunderter gegen 1 tausend
     </button>
 
-    <button>
+    <button v-on:click="if(s1z>10){s1z-=10;s1h++;}">
         10 zehner gegen 1 hunderter
     </button>
 
-    <button>
+    <button v-on:click="if(s1e>9){s1e-=10;s1z++;}">
         10 einer gegen 1 zehner
     </button>
+
+    <button v-on:click="abgabe2=true" >
+         Schritt 2 prüfen
+ 
+        <h1 v-if="s1t<10&&s1h<10&&s1t<10&&s1e<10&&abgabe2&&s1resultat"> Your aweee</h1>
+        <h1 v-else-if="abgabe2"> Nope</h1>
+    </button>
+   
+    
+
+
 
    
 </div>
@@ -210,6 +235,7 @@ export default {
             s1res:0,
             s1resultat:false,
             abgabe:false,
+            abgabe2:false,
             locked:true
             
             
