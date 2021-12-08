@@ -1,5 +1,7 @@
 <template>
-  
+  <button>
+    component
+  </button>
 </template>
 
 <script>

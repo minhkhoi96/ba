@@ -6,6 +6,7 @@
 
     <input v-model="result" placeholder="edit me" />
 
+    <div>
     <button v-on:click="reset">
     <h1>RESET</h1>
     </button>
@@ -16,6 +17,11 @@
     <h1 v-else-if="abgabe"> Nope</h1>
     </button>
 
+    <button >
+    <h1>BEISPIEL</h1>
+    </button>
+    
+    </div>
 
   
     

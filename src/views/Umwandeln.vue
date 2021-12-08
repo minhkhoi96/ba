@@ -18,6 +18,11 @@
 <h1>NEXT</h1>
   </button>
 
+    <button >
+  
+    <h1>BEISPIEL</h1>
+  </button>
+
 
     <h1>{{val}}</h1>
 <button v-on:click="addtausend">1000</button>
@@ -35,14 +40,17 @@
        <h1> </h1>
     
   <!--
-   WE PRINT ALLL OUR TAUSENDER
+   WE PRINT ALLL OUR TAUSENDERstyle="margin:auto; width:50%"
  -->
- <div style="display:flex;;flex-direction: column;float:left;row-gap:10px">
-<div v-for='index in lengthT' :key='index'>
+ 
+    
+    <div style="margin-left:30%">
+ <div style="display:flex;;flex-direction: column;float:left;row-gap:10px;margin-left:10px;margin-right:10px">
+<div v-for='index in lengthT' :key='index' >
               
-              <button v-on:click="array[0].pop();lengthT--;curr-=1000;abgabe=false"  >
+              <button v-on:click="array[0].pop();lengthT--;curr-=1000;abgabe=false" style="width: 80px;height:50px" >
               <!--<img src="@/assets/logo.png" style="width:150px;height:150px;float:left" /> -->
-              <h1>1000</h1>
+              1000
               </button>
             </div>
         <h1> </h1>
@@ -51,32 +59,34 @@
    <!--
    WE PRINT ALLL OUR Hunderter
  -->
-<div style="display:flex;;flex-direction: column;float:left;row-gap:10px">
+<div style="display:flex;;flex-direction: column;float:left;row-gap:10px;margin-left:10px;margin-right:10px">
 <div v-for='index in lengthH' :key='index'>
               
-              <button v-on:click="array[1].pop();lengthH--;curr-=100;abgabe=false"  >
+              <button v-on:click="array[1].pop();lengthH--;curr-=100;abgabe=false" style="width: 80px;height:50px"  >
               <!--<img src="@/assets/logo.png" style="width:100px;height:100px;float:left" />-->
-              <h1>100</h1>
+              100
               </button>
             </div>
 </div>
 
-<div style="display:flex;;flex-direction: column;float:left;row-gap:10px">
+<div style="display:flex;;flex-direction: column;float:left;row-gap:10px;margin-left:10px;margin-right:10px">
 <div v-for='index in lengthZ' :key='index'>
-              <button v-on:click="array[2].pop();lengthZ--;curr-=10;abgabe=false" >
-              <h1>10</h1>
+              <button v-on:click="array[2].pop();lengthZ--;curr-=10;abgabe=false" style="width: 80px;height:50px" >
+              10
               </button>
             </div>
 </div>
 
-<div style="display:flex;;flex-direction: column;float:left;row-gap:10px">
+<div style="display:flex;;flex-direction: column;float:left;row-gap:10px;margin-left:10px;margin-right:10px">
 <div v-for='index in lengthE' :key='index'>
-              <button v-on:click="array[3].pop();lengthE--;curr-=1;abgabe=false" >
+              <button v-on:click="array[3].pop();lengthE--;curr-=1;abgabe=false"  style="width: 80px;height:50px">
               
-              <h1>1</h1>
+              1
               </button>
             </div>
 </div>
+
+ </div>
  
  <h1></h1>
  
@@ -86,8 +96,10 @@
 
 
 <script>
+import About from './About.vue';
 
 export default {
+  components: { About },
 
   data(){
     return{

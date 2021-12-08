@@ -4,10 +4,12 @@
 
     <h1> {{roman}} </h1>
 <input v-model="result" placeholder="edit me" />
-<button v-on:click="reset">
+<h1> {{lösung}} </h1>
+<div>
+  <button v-on:click="reset">
     <h1>RESET</h1>
     </button>
-     <h1> {{lösung}} </h1>
+     
 
     <button v-on:click="check">
     <h1>abgeben</h1>
@@ -15,6 +17,10 @@
  <h1 v-else-if="abgabe"> Nope</h1>
    </button>
 
+   <button >
+    <h1>BEISPIEL</h1>
+    </button>
+</div>
     
   </div>
 </template>

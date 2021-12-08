@@ -40,6 +40,7 @@
       <img src="@/assets/sixtyfour.png"  />
     </button>
    
+<div>
     <button v-on:click="check">
     <h1>abgeben</h1>
     <h1 v-if="resultat&&abgabe"> Your aweee</h1>
@@ -49,7 +50,10 @@
     <button v-on:click="reset">
     <h1>RESET</h1>
     </button>
-
+    <button >
+    <h1>BEISPIEL</h1>
+    </button>
+</div>
 
     <div v-for='index in length1' :key='index'>
        <button v-on:click="bag1.pop();length1--;result--" style="float:left">
