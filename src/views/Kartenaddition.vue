@@ -160,7 +160,7 @@
 <button v-on:click="checks1">
  Schritt 1 prüfen
  
-<h1 v-if="s1resultat&&abgabe"> Your aweee</h1>
+<h1 v-if="s1resultat&&abgabe"> richtig</h1>
  <h1 v-else-if="abgabe"> Nope</h1>
 </button>
       </div>
@@ -198,7 +198,7 @@ if (s1t!=0) {s1t--;s1res-=1000;}
     <button v-on:click="abgabe2=true" >
          Schritt 2 prüfen
  
-        <h1 v-if="s1t<10&&s1h<10&&s1t<10&&s1e<10&&abgabe2&&s1resultat"> Your aweee</h1>
+        <h1 v-if="s1t<10&&s1h<10&&s1t<10&&s1e<10&&abgabe2&&s1resultat"> richtig</h1>
         <h1 v-else-if="abgabe2"> Nope</h1>
     </button>
 

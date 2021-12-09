@@ -22,7 +22,7 @@
 
 <button v-on:click="check">
     <h1>abgeben</h1>
-    <h1 v-if="resultat&&abgabe"> Your aweee</h1>
+    <h1 v-if="resultat&&abgabe"> richtig</h1>
  <h1 v-else-if="abgabe"> Nope</h1>
   </button>
 
