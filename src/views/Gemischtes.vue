@@ -4,7 +4,7 @@
     <h1>Drücke sie als Dezimalzahl aus!</h1>
     
       <h1>{{binary}}<h6 style="display:inline;font-size:12px">3</h6> </h1>
-      <h1>lösung ist {{val}}</h1>
+      <h1>(lösung ist: {{val}})</h1>
 <input v-model="result" placeholder="edit me" />
 <p>Message is: {{ result }}</p>
 

@@ -56,6 +56,11 @@
     <img src="@/assets/two.png"  />
   </div>
 
+  <div class="box">
+    <router-link to="/challenge">Challenge</router-link>
+    <img src="@/assets/four.png"  />
+  </div>
+
  
   
 

@@ -3,7 +3,7 @@
     <h1>Wandle folgende Zahlen in ihre Binäre Darstellung um</h1>
 
     <h1> {{dec}} </h1>
-    <h1> {{lösung}} </h1>
+    <h1>(lösung ist: {{lösung}} )</h1>
     
     <input v-model="result" placeholder="edit me"  />
 <p>Message is: {{ result }}</p>

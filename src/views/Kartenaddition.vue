@@ -46,7 +46,7 @@
    </div>
     
 
-    <div style="float:left">
+    <div style="float:left; margin-left:10%">
     <p>
     {{sum2}}:
     </p>

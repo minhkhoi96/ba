@@ -9,7 +9,7 @@ import Römisch from '../views/Römisch.vue'
 import Gemischtes from '../views/Gemischtes.vue'
 import Hex from '../views/Hex.vue'
 import Biber from '../views/Bibercoins.vue'
-
+import Challenge from '../views/Challenge.vue'
 import Kartenaddition from '../views/Kartenaddition.vue'
 
 
@@ -19,7 +19,11 @@ const routes = [
     name: 'Home',
     component: Home
   },
-  
+  {
+    path: '/challenge',
+    name: 'Challenge',
+    component: Challenge
+  },
   {
     path: '/coins',
     name: 'Coins',

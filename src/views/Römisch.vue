@@ -4,7 +4,7 @@
 
     <h1> {{roman}} </h1>
 <input v-model="result" placeholder="edit me" />
-<h1> {{lösung}} </h1>
+<h1> (lösung ist: {{lösung}}) </h1>
 <div>
   <button v-on:click="reset">
     <h1>RESET</h1>
