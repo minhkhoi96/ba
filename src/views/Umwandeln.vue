@@ -1,5 +1,13 @@
 <template>
- 
+    <div v-if="showModal">
+    <Modal header="sign me up" @close="toggleModal">
+    <img src="@/assets/SetoKaiba-DL.png" style="height:30%;width:30%"/>
+    </Modal>
+
+    </div>
+    <button @click="toggleModal">open Modal </button>
+    
+    
     <h1>Stelle die folgende Zahl mit den folgenden Karten dar:</h1>
     
   <button v-on:click="check">
@@ -44,7 +52,7 @@
  -->
  
     
-    <div style="margin-left:30%">
+    <div style="margin-left:35%">
  <div style="display:flex;;flex-direction: column;float:left;row-gap:10px;margin-left:10px;margin-right:10px">
 <div v-for='index in lengthT' :key='index' >
               
@@ -96,10 +104,13 @@
 
 
 <script>
+
 import About from './About.vue';
+import Modal from '@/components/Modal.vue'
+
 
 export default {
-  components: { About },
+  components: {Modal},
 
   data(){
     return{
@@ -111,7 +122,8 @@ export default {
       array: [],
       curr: 0,
       resultat: false,
-      abgabe:false
+      abgabe:false,
+      showModal:false
     }
   },
   created: function(){
@@ -187,6 +199,9 @@ this.val= Math.floor(Math.random() * 9999) + 1,
       this.resultat= false
       this.abgabe=false
       this.initArr()
+    },
+    toggleModal(){
+      this.showModal= !this.showModal
     }
   }
   

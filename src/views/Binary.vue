@@ -1,4 +1,14 @@
 <template>
+
+<div v-if="showModal">
+    <Modal header="sign me up" @close="toggleModal">
+    <img src="@/assets/SetoKaiba-DL.png" style="height:40%;width:40%"/>
+    </Modal>
+
+    </div>
+    <button @click="toggleModal">open Modal </button>
+
+
   <div >
     <h1>Welche Dezimalzahl wird durch folgende binäre Zahl ausgedrückt?</h1>
   </div>
@@ -24,16 +34,19 @@
 
 
 <script>
-
+import Modal from '@/components/Modal.vue'
 
 export default {
+  components: {Modal},
+
   data(){
     return{
     val: Math.floor(Math.random() * 32) + 1,
     binary:0,
     result:0,
     resultat:false,
-    abgabe:false
+    abgabe:false,
+    showModal:false
     }
   },
   
@@ -57,6 +70,9 @@ export default {
       else
         this.resultat=false
       this.abgabe=true
+    },
+    toggleModal(){
+      this.showModal= !this.showModal
     }
     
     }

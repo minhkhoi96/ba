@@ -1,4 +1,12 @@
 <template>
+
+<div v-if="showModal">
+    <Modal header="sign me up" @close="toggleModal">
+    <img src="@/assets/SetoKaiba-DL.png" style="height:40%;width:40%"/>
+    </Modal>
+
+    </div>
+    <button @click="toggleModal">open Modal </button>
   <div >
     <h1>welche Dezimalzahl wird durch diese Vorrömische Zahl dargestellt?</h1>
 
@@ -27,8 +35,13 @@
 
 
 <script>
+import Modal from '@/components/Modal.vue'
 
+
+
+  
 export default {
+  components: {Modal},
   data(){
     return{
       roman:'',
@@ -42,8 +55,8 @@ export default {
      result:'',
      lösung:0,
      abgabe:false,
-     resultat:false
-     
+     resultat:false,
+     showModal:false
     }
   },
 
@@ -134,6 +147,9 @@ export default {
       else
         this.resultat=false
       this.abgabe=true
+    },
+    toggleModal(){
+      this.showModal=!this.showModal
     }
   }
 }
