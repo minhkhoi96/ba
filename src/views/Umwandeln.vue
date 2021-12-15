@@ -16,10 +16,7 @@
  <h1 v-else-if="abgabe"> Nope</h1>
   </button>
 
-  <button  v-on:click="reset">
   
-<h1>RESET</h1>
-  </button>
 
    <button  v-on:click="reset">
   

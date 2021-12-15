@@ -11,6 +11,7 @@ import Hex from '../views/Hex.vue'
 import Biber from '../views/Bibercoins.vue'
 import Challenge from '../views/Challenge.vue'
 import Kartenaddition from '../views/Kartenaddition.vue'
+import Greedy from '../views/Greedy.vue'
 
 
 const routes = [
@@ -18,6 +19,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/greedy',
+    name: 'Greedy',
+    component: Greedy
   },
   {
     path: '/challenge',

@@ -1,8 +1,8 @@
 <template>
     <div class="backdrop" @click="closeModal">
         <div class="modal">
-            <h1>modal title</h1>
-            <p>modal content</p>
+            <h1>TESTFENSTER</h1>
+            <p> </p>
            <p> {{header}} </p>
            <button> x </button>
            <slot></slot>

@@ -61,6 +61,11 @@
     <img src="@/assets/four.png"  />
   </div>
 
+  <div class="box">
+    <router-link to="/greedy">Greedy</router-link>
+    <img src="@/assets/one.png"  />
+  </div>
+
  
   
 
