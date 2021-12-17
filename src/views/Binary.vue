@@ -6,7 +6,7 @@
     </Modal>
 
     </div>
-    <button @click="toggleModal">open Modal </button>
+    
 
 
   <div >
@@ -27,9 +27,11 @@
  <h1 v-else-if="abgabe"> Nope</h1>
   </button>
 
-    <button >
+    <button  @click="toggleModal" >
     <h1>BEISPIEL</h1>
     </button>
+
+    
 </template>
 
 

@@ -6,14 +6,14 @@
     </Modal>
 
     </div>
-    <button @click="toggleModal">open Modal </button>
-  <div >
+    
+  
     <h1>welche Dezimalzahl wird durch diese Vorrömische Zahl dargestellt?</h1>
 
     <h1> {{roman}} </h1>
 <input v-model="result" placeholder="edit me" />
 <h1> (lösung ist: {{lösung}}) </h1>
-<div>
+
   <button v-on:click="reset">
     <h1>RESET</h1>
     </button>
@@ -25,12 +25,15 @@
  <h1 v-else-if="abgabe"> Nope</h1>
    </button>
 
-   <button >
+   <button @click="toggleModal">
     <h1>BEISPIEL</h1>
     </button>
-</div>
-    
-  </div>
+    <br>
+
+<a class="container">
+  tabelle
+</a>
+  
 </template>
 
 
@@ -41,7 +44,7 @@ import Modal from '@/components/Modal.vue'
 
   
 export default {
-  components: {Modal},
+  
   data(){
     return{
       roman:'',
@@ -57,6 +60,7 @@ export default {
      abgabe:false,
      resultat:false,
      showModal:false
+     
     }
   },
 
@@ -154,3 +158,18 @@ export default {
   }
 }
 </script>
+
+
+<style scoped>
+.container {
+  display: inline-block;
+  flex-direction: column;
+  align-items:center;
+    min-height: 200px;
+    width: 200px;
+    border: 1px solid black;
+    margin: 0 10px 10px 200px;
+    background: white;
+    
+}
+</style>

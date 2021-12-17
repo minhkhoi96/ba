@@ -1,5 +1,10 @@
 <template>
-  <div >
+    <div v-if="showModal">
+    <Modal header="sign me up" @close="toggleModal">
+    <img src="@/assets/SetoKaiba-DL.png" style="height:40%;width:40%"/>
+    </Modal>
+
+    </div>
     <h1>Welche Dezimalzahl wird durch folgende hexadezimalzahl dargestellt?</h1>
     <p>(lösung ist:{{lösung}})</p>
     <h1>{{hex}}<h6 style="display:inline;font-size:12px">16</h6></h1>
@@ -17,31 +22,35 @@
     <h1 v-else-if="abgabe"> Nope</h1>
     </button>
 
-    <button >
+    <button @click="toggleModal">
     <h1>BEISPIEL</h1>
     </button>
     
     </div>
-
+    <a class="container">
+       Tabelle
+    </a>
   
     
-  </div>
+  
 </template>
 
 
 
 <script>
-
+import Modal from '@/components/Modal.vue'
 
 
 export default {
+  components: {Modal},
   data(){
     return{
       hex:'',
       result:0,
       lösung:0,
       abgabe:false,
-      resultat:false
+      resultat:false,
+      showModal:false
     }
   },
 
@@ -68,6 +77,9 @@ export default {
       this.genHexString()
 
     },
+    toggleModal(){
+      this.showModal=!this.showModal
+    },
     check(){
       if(this.lösung==this.result)
         this.resultat=true
@@ -79,3 +91,17 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.container {
+  display: inline-block;
+  flex-direction: column;
+  align-items:center;
+    min-height: 200px;
+    width: 200px;
+    border: 1px solid black;
+    margin: 0 10px 10px 200px;
+    background: white;
+    
+}
+</style>

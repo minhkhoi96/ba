@@ -1,5 +1,11 @@
 <template>
-  <div >
+<div v-if="showModal">
+    <Modal header="sign me up" @close="toggleModal">
+    <img src="@/assets/SetoKaiba-DL.png" style="height:40%;width:40%"/>
+    </Modal>
+
+    </div>
+  
     <h1>Wandle folgende Zahlen in ihre Binäre Darstellung um</h1>
 
     <h1> {{dec}} </h1>
@@ -19,26 +25,32 @@
  <h1 v-else-if="abgabe"> Nope</h1>
   </button>
 
-  <button >
+  <button @click="toggleModal">
     <h1>BEISPIEL</h1>
     </button>
   </div>
 
-  </div>
+  
+
+  <a class="container">
+       Tabelle
+    </a>
 </template>
 
 
 <script>
-
+import Modal from '@/components/Modal.vue'
 
 export default {
+  components:{Modal},
   data(){
     return {
       dec: Math.floor(Math.random() * 500) + 1,
       result:'',
       abgabe:false,
       resultat:false,
-      lösung:''
+      lösung:'',
+      showModal:false
     }
   },
    created: function(){
@@ -48,6 +60,9 @@ export default {
   methods:{
     init(){
       this.lösung = this.dec.toString(2)
+    },
+    toggleModal(){
+      this.showModal=!this.showModal
     },
     reset(){
       this.dec =Math.floor(Math.random() * 1000) + 1,
@@ -67,6 +82,20 @@ export default {
 }
 
 </script>
+
+<style scoped>
+.container {
+  display: inline-block;
+  flex-direction: column;
+  align-items:center;
+    min-height: 200px;
+    width: 200px;
+    border: 1px solid black;
+    margin: 0 10px 10px 200px;
+    background: white;
+    
+}
+</style>
 
 
 

@@ -5,29 +5,28 @@
     </Modal>
 
     </div>
-    <button @click="toggleModal">open Modal </button>
     
     
-    <h1>Stelle die folgende Zahl mit den folgenden Karten dar:</h1>
+    
+    <h3>Stelle die folgende Zahl mit den folgenden Karten dar:</h3>
     
   <button v-on:click="check">
-  <h1>ABGEBEN</h1>
-  <h1 v-if="resultat&&abgabe"> richtig</h1>
- <h1 v-else-if="abgabe"> Nope</h1>
+  <h3>ABGEBEN</h3>
+  <h3 v-if="resultat&&abgabe"> richtig</h3>
+ <h3 v-else-if="abgabe"> Nope</h3>
   </button>
 
   
 
    <button  v-on:click="reset">
   
-<h1>NEXT</h1>
+<h3>NEXT</h3>
   </button>
 
-    <button >
-  
-    <h1>BEISPIEL</h1>
-  </button>
-
+   
+<button @click="toggleModal">
+      <h3>Beispiel </h3> 
+      </button>
 
     <h1>{{val}}</h1>
 <button v-on:click="addtausend">1000</button>
@@ -53,7 +52,7 @@
  <div style="display:flex;;flex-direction: column;float:left;row-gap:10px;margin-left:10px;margin-right:10px">
 <div v-for='index in lengthT' :key='index' >
               
-              <button v-on:click="array[0].pop();lengthT--;curr-=1000;abgabe=false" style="width: 80px;height:50px" >
+              <button v-on:click="array[0].pop();lengthT--;curr-=1000;abgabe=false" style="width: 70px;height:40px" >
               <!--<img src="@/assets/logo.png" style="width:150px;height:150px;float:left" /> -->
               1000
               </button>
@@ -67,7 +66,7 @@
 <div style="display:flex;;flex-direction: column;float:left;row-gap:10px;margin-left:10px;margin-right:10px">
 <div v-for='index in lengthH' :key='index'>
               
-              <button v-on:click="array[1].pop();lengthH--;curr-=100;abgabe=false" style="width: 80px;height:50px"  >
+              <button v-on:click="array[1].pop();lengthH--;curr-=100;abgabe=false" style="width: 70px;height:40px"  >
               <!--<img src="@/assets/logo.png" style="width:100px;height:100px;float:left" />-->
               100
               </button>
@@ -76,7 +75,7 @@
 
 <div style="display:flex;;flex-direction: column;float:left;row-gap:10px;margin-left:10px;margin-right:10px">
 <div v-for='index in lengthZ' :key='index'>
-              <button v-on:click="array[2].pop();lengthZ--;curr-=10;abgabe=false" style="width: 80px;height:50px" >
+              <button v-on:click="array[2].pop();lengthZ--;curr-=10;abgabe=false" style="width: 70px;height:40px" >
               10
               </button>
             </div>
@@ -84,7 +83,7 @@
 
 <div style="display:flex;;flex-direction: column;float:left;row-gap:10px;margin-left:10px;margin-right:10px">
 <div v-for='index in lengthE' :key='index'>
-              <button v-on:click="array[3].pop();lengthE--;curr-=1;abgabe=false"  style="width: 80px;height:50px">
+              <button v-on:click="array[3].pop();lengthE--;curr-=1;abgabe=false"  style="width: 70px;height:40px">
               
               1
               </button>
@@ -107,7 +106,7 @@ import Modal from '@/components/Modal.vue'
 
 
 export default {
-  components: {Modal},
+ 
 
   data(){
     return{
@@ -220,4 +219,5 @@ this.val= Math.floor(Math.random() * 9999) + 1,
    
 
  }
+ 
 </style>
