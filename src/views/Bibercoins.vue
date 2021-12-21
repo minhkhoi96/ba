@@ -1,107 +1,64 @@
 <template>
-  <div >
-    <h1>Wir haben folgende {{wert}} Bibercoins gesammelt</h1>
-    <h1>Weil wir aber nicht genug platz im Rucksack haben möchten wir mit weniger Münzen auskommen aber immernoch den gleichen Wert an </h1>
-    <h1>Münzen haben. Kannst du uns helfen die Coins so auszutauschen, dass wir am schluss so wenig Münzen wie möglich tragen müssen aber den ursprünglichen </h1>
-    <h1>Wert behalten? </h1>
+  
+    
+<a class="rucksack">
+hier ist der rucksack: er hat folgende coins:
+<br>
 
-    <h1>{{bag}}</h1>
-   
-    <h1>{{lösung}}</h1>
+<template v-for='index in rand1' :key='index'>
+       
+            <img src="@/assets/one.png" style="height:10%;width:10%"/>
+       
+</template>
+
+<template v-for='index in rand2' :key='index'>
+       
+            <img src="@/assets/two.png" style="height:10%;width:10%"/>
+       
+</template>
+
+<template v-for='index in rand4' :key='index'>
+       
+            <img src="@/assets/four.png" style="height:10%;width:10%"/>
+       
+       </template>
+
+  <template v-for='index in rand8' :key='index'>
+       
+            <img src="@/assets/eight.png" style="height:10%;width:10%"/>
+       
+       </template>
+<template v-for='index in rand16' :key='index'>
+       
+            <img src="@/assets/sixteen.png" style="height:10%;width:10%"/>
+       
+       </template>
+
+       <template v-for='index in rand32' :key='index'>
+       
+            <img src="@/assets/thirtytwo.png" style="height:10%;width:10%"/>
+       
+       </template>
+
+       <template v-for='index in rand64' :key='index'>
+       
+            <img src="@/assets/sixtyfour.png" style="height:10%;width:10%"/>
+       
+       </template>
+
+</a>
+
+
+<a class="maschine">
+  hier ist die maschine zum reinziehen, sie nimmt  2 gleiche münzen und spuckt ihre summe als neue summe raus
+  </a>
+
 
     
 
-    <!--<button v-on:click=" ">1000</button>  -->
-    <button v-on:click="add1();result++"> 
-      <img src="@/assets/one.png"  />
-    </button>
+  
 
-    <button v-on:click="add2();result+=2"> 
-      <img src="@/assets/two.png"  />
-    </button>
-
-    <button v-on:click="add4();result+=4"> 
-      <img src="@/assets/four.png"  />
-    </button>
-
-    <button v-on:click="add8();result+=8"> 
-      <img src="@/assets/eight.png"  />
-    </button>
-
-    <button v-on:click="add16();result+=16"> 
-      <img src="@/assets/sixteen.png"  />
-    </button>
-
-    <button v-on:click="add32();result+=32"> 
-      <img src="@/assets/thirtytwo.png"  />
-    </button>
-
-    <button v-on:click="add64();result+=64"> 
-      <img src="@/assets/sixtyfour.png"  />
-    </button>
-   
-<div>
-    <button v-on:click="check">
-    <h1>abgeben</h1>
-    <h1 v-if="resultat&&abgabe"> richtig</h1>
- <h1 v-else-if="abgabe"> Nope</h1>
-  </button>
-
-    <button v-on:click="reset">
-    <h1>RESET</h1>
-    </button>
-    <button >
-    <h1>BEISPIEL</h1>
-    </button>
-</div>
-
-    <div v-for='index in length1' :key='index'>
-       <button v-on:click="bag1.pop();length1--;result--" style="float:left">
-              <img src="@/assets/one.png" style="width:100px;height:100px;float:left" />
-              </button>
-    </div>
-
-    <div v-for='index in length2' :key='index'>
-       <button v-on:click="bag2.pop();length2--;result-=2" style="float:left">
-              <img src="@/assets/two.png" style="width:100px;height:100px;float:left" />
-              </button>
-    </div>
-
-    <div v-for='index in length4' :key='index'>
-       <button v-on:click="bag4.pop();length4--;result-=4" style="float:left">
-              <img src="@/assets/four.png" style="width:100px;height:100px;float:left" />
-              </button>
-    </div>
-
-    <div v-for='index in length8' :key='index'>
-       <button v-on:click="bag8.pop();length8--;result-=8" style="float:left">
-              <img src="@/assets/eight.png" style="width:100px;height:100px;float:left" />
-              </button>
-    </div>
-
-    <div v-for='index in length16' :key='index'>
-       <button v-on:click="bag16.pop();length16--;result-=16" style="float:left">
-              <img src="@/assets/sixteen.png" style="width:100px;height:100px;float:left" />
-              </button>
-    </div>
-
-    <div v-for='index in length32' :key='index'>
-       <button v-on:click="bag32.pop();length32--;result-=32" style="float:left">
-              <img src="@/assets/thirtytwo.png" style="width:100px;height:100px;float:left" />
-              </button>
-    </div>
-
-    <div v-for='index in length64' :key='index'>
-       <button v-on:click="bag64.pop();length64--;result-=64" style="float:left">
-              <img src="@/assets/sixtyfour.png" style="width:100px;height:100px;float:left" />
-              </button>
-    </div>
-   
-
-    
-  </div>
-
-  <h2>hiho</h2>
+  
 </template>
 
 
@@ -152,24 +109,8 @@ export default {
     methods:{
 
         init(){
-            this.bag=[];
-            this.bag1=[];
-            this.length1=0;
-            this.bag2=[];
-            this.length2=0;
-            this.bag4=[];
-            this.length4=0;
-            this.bag8=[];
-            this.length8=0;
-            this.bag16=[];
-            this.length16=0;
-            this.bag32=[];
-            this.length32=0;
-            this.bag64=[];
-            this.length64=0;
-            this.result=0;
-            this.resultat=false;
-            this.abgabe=false;
+            
+           
             for(let i=0;i<7;i++){
                 this.add(i)
             }
@@ -177,12 +118,7 @@ export default {
            
         },
         check(){
-          if(this.lösung==this.result&&this.length1<=1&&this.length2<=1&&this.length4<=1&&this.length8<=1&&this.length16<=1
-          &&this.length32<=1&&this.length64<=1)
-            this.resultat=true
-          else 
-            this.resultat=false
-          this.abgabe=true
+         
 
         },
         reset(){
@@ -297,3 +233,31 @@ export default {
     }
 }
 </script>
+
+
+<style scoped>
+.rucksack {
+  display: inline-block;
+  flex-direction: column;
+  align-items:center;
+    min-height: 300px;
+    min-width: 400px;
+    border: 1px solid black;
+    margin: 0 10px 10px 200px;
+    background: white;
+    
+}
+.maschine{
+  
+  display: inline-block;
+  flex-direction: column;
+  align-items:center;
+    min-height: 200px;
+    min-width: 200px;
+    border: 1px solid black;
+    margin: 0 10px 10px 200px;
+    background: white;
+    
+
+}
+</style>

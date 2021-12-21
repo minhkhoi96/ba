@@ -1,7 +1,7 @@
 <template>
     <div class="backdrop" @click="closeModal">
         <div class="modal">
-            <h1>TESTFENSTER</h1>
+            
             <p> </p>
            <p> {{header}} </p>
            <button> x </button>

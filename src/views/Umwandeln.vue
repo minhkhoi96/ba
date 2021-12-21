@@ -1,7 +1,10 @@
 <template>
     <div v-if="showModal">
-    <Modal header="sign me up" @close="toggleModal">
-    <img src="@/assets/SetoKaiba-DL.png" style="height:30%;width:30%"/>
+    <Modal header="hi" @close="toggleModal">
+    
+    
+
+  <video src="@/assets/test.mp4" id="video-container" controls></video>
     </Modal>
 
     </div>
@@ -101,13 +104,15 @@
 
 <script>
 
-import About from './About.vue';
+
 import Modal from '@/components/Modal.vue'
 
 
 export default {
  
-
+components:{
+  Modal
+},
   data(){
     return{
       val: Math.floor(Math.random() * 9999) + 1,
@@ -218,6 +223,11 @@ this.val= Math.floor(Math.random() * 9999) + 1,
    display: inline-block
    
 
+ }
+ .video-container{
+   height: 10px;
+   width: 10px
+   
  }
  
 </style>
