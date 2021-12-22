@@ -8,7 +8,7 @@ import AddBin from '../views/AddBin.vue'
 import Römisch from '../views/Römisch.vue'
 import Gemischtes from '../views/Gemischtes.vue'
 import Hex from '../views/Hex.vue'
-import Biber from '../views/Bibercoins.vue'
+
 import Challenge from '../views/Challenge.vue'
 import Kartenaddition from '../views/Kartenaddition.vue'
 import Greedy from '../views/Greedy.vue'
@@ -30,11 +30,7 @@ const routes = [
     name: 'Challenge',
     component: Challenge
   },
-  {
-    path: '/coins',
-    name: 'Coins',
-    component: Biber
-  },
+  
   {
     path: '/about',
     name: 'About',

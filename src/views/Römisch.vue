@@ -6,11 +6,16 @@
     </Modal>
 
     </div>
+
+    
     
   
     <h1>welche Dezimalzahl wird durch diese Vorrömische Zahl dargestellt?</h1>
 
+   
+
     <h1> {{roman}} </h1>
+    
 <input v-model="result" placeholder="edit me" />
 <h1> (lösung ist: {{lösung}}) </h1>
 
@@ -20,9 +25,17 @@
      
 
     <button v-on:click="check">
-    <h1>abgeben</h1>
-    <h1 v-if="resultat&&abgabe"> richtig</h1>
- <h1 v-else-if="abgabe"> Nope</h1>
+        <h1>abgeben</h1>
+        <div v-if="resultat&&abgabe"> 
+          <Modal header="" @close="toggleModal">
+          <h1>RICHTIG</h1>
+          </Modal>
+        </div>
+        <div v-else-if="abgabe">
+           <Modal header="" @close="toggleModal">
+          <h1>FALSCH</h1>
+          </Modal>
+        </div>
    </button>
 
    <button @click="toggleModal">
@@ -30,9 +43,14 @@
     </button>
     <br>
 
-<a class="container">
-  tabelle
-</a>
+     <div>
+    <p>Zur Hilfe siehst du hier eine Tabelle mit den römischen Zahlen</p>
+   <img src="@/assets/roemisch.png" style="display:inline-block"> 
+  </div>
+
+  
+  
+
   
 </template>
 

@@ -209,7 +209,7 @@ export default {
     },
 
     drop(event) {
-      //if(document.getElementById("container2").childNodes.length >= 3)
+      //if(document.getElementById("muenze1").childNodes.length >= 1)
        // { return }  
       event.preventDefault();
       var data = event.dataTransfer.getData("text");

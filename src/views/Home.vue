@@ -1,6 +1,6 @@
 <template>
 
-  <h1> [BILDDD]</h1>
+  <h1> [HIER KOMMT EIN TITELBILD]</h1>
   <div class="home">
     <h2>Hallo hier findest du aufgaben zum buch Einfach Informatik 7-8 ZUM KAPITEL DARSTELLUNG VON ZAHLEN :3</h2>
     
@@ -43,11 +43,7 @@
      <img src="@/assets/one.png"  />
   </div>
 
-  <div class="box">
-    <router-link to="/coins">Bibercoins optimieren</router-link>
-    <img src="@/assets/four.png"  />
-  </div>
-
+  
 
 
 

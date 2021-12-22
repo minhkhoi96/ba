@@ -161,9 +161,10 @@ if (s1t!=0) {s1t--;s1res-=1000;}
 
 <script>
 import Modal from '@/components/Modal.vue'
+import Modal1 from '@/components/Verifier.vue'
 
 export default {
-    components:{Modal},
+    components:{Modal,Modal1},
     data(){
         return{
             

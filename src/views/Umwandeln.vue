@@ -1,35 +1,36 @@
 <template>
     <div v-if="showModal">
-    <Modal header="hi" @close="toggleModal">
+    <Modal header="" @close="toggleModal">
     
-    
+    <p>Du kannst durch Klicken die entsprechende Karte hinzufügen.
+       Wenn du eine Karte löschen willst, klicke auf die Karte!
+    </p>
 
-  <video src="@/assets/test.mp4" id="video-container" controls></video>
+  <video src="@/assets/karten.mp4" id="video-container" style="width:70%;height:auto" controls></video>
     </Modal>
 
     </div>
     
     
-    
-    <h3>Stelle die folgende Zahl mit den folgenden Karten dar:</h3>
-    
-  <button v-on:click="check">
-  <h3>ABGEBEN</h3>
-  <h3 v-if="resultat&&abgabe"> richtig</h3>
- <h3 v-else-if="abgabe"> Nope</h3>
-  </button>
+    <div v-if="showModal1">
+      <div v-if="state">
+        <Modal1 header="richtig" @close="showModal1=false" style="color:green">
+        
+        </Modal1>
+      </div>
 
-  
+      <div v-else>
+        <Modal1 header="falsch" @close="showModal1=false" style="color:red">
+        
+        </Modal1>
 
-   <button  v-on:click="reset">
-  
-<h3>NEXT</h3>
-  </button>
+      </div>
 
+    </div>
+    <h2>Stelle die folgende Zahl mit den folgenden Karten dar:</h2>
    
-<button @click="toggleModal">
-      <h3>Beispiel </h3> 
-      </button>
+  
+ 
 
     <h1>{{val}}</h1>
 <button v-on:click="addtausend">1000</button>
@@ -96,9 +97,35 @@
  </div>
  
  <h1></h1>
+ <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
  
 
+<div style="display:flex;margin-left:40%;">
+    <button v-on:click="check()" style="margin-left:10px;">
+    <p>Überprüfen</p>
+    <div v-if="resultat&&abgabe"> 
+     
+    </div>
+    <div v-else-if="abgabe"> 
+    
+  </div>
+  </button>
 
+ 
+ 
+
+   <button  v-on:click="reset" style="margin-left:10px;">
+     
+  <img src="@/assets/reset.png" alt="">
+
+  </button>
+
+   
+<button @click="toggleModal" style="margin-left:10px;">
+    
+      <img src="@/assets/help.png" alt="">
+      </button>
+   </div>
 </template>
 
 
@@ -106,12 +133,13 @@
 
 
 import Modal from '@/components/Modal.vue'
+import Modal1 from '@/components/Verifier.vue'
 
 
 export default {
  
 components:{
-  Modal
+  Modal,Modal1
 },
   data(){
     return{
@@ -124,7 +152,10 @@ components:{
       curr: 0,
       resultat: false,
       abgabe:false,
-      showModal:false
+      showModal:false,
+      showModal1:false,
+      state:false
+
     }
   },
   created: function(){
@@ -137,10 +168,15 @@ components:{
     },
     check(){
       this.abgabe=true
-      if (this.val==this.curr)
-        this.resultat = true
-      else 
-        this.resultat = false
+      if (this.val==this.curr){
+        this.resultat = true;
+        this.state = true;
+      }
+
+      else {
+        this.resultat = false;
+        this.state = false;
+      } this.toggleModal1();
     },
     popup(){
       
@@ -203,6 +239,9 @@ this.val= Math.floor(Math.random() * 9999) + 1,
     },
     toggleModal(){
       this.showModal= !this.showModal
+    },
+    toggleModal1(){
+      this.showModal1= true;
     }
   }
   
@@ -229,5 +268,6 @@ this.val= Math.floor(Math.random() * 9999) + 1,
    width: 10px
    
  }
+ 
  
 </style>
