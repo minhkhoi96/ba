@@ -9,7 +9,10 @@
     <router-link to="/umwandeln">Kartendarstellung</router-link>
      <img src="@/assets/one.png"  />
   </div>
-
+  <div class="box">
+    <router-link to="/addition">Kartenaddition</router-link>
+    <img src="@/assets/two.png"  />
+  </div>
    <div class="box">
     <router-link to="/binary">Binaere Zahlen interpretieren</router-link>
      <img src="@/assets/one.png"  />
@@ -47,13 +50,10 @@
 
 
 
-  <div class="box">
-    <router-link to="/addition">Kartenaddition</router-link>
-    <img src="@/assets/two.png"  />
-  </div>
+  
 
   <div class="box">
-    <router-link to="/challenge">Challenge</router-link>
+    <router-link to="/challenge">Münzen tauschen</router-link>
     <img src="@/assets/four.png"  />
   </div>
 

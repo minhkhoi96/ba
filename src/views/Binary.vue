@@ -1,9 +1,24 @@
 <template>
 
 <div v-if="showModal">
-    <Modal header="sign me up" @close="toggleModal">
-    <img src="@/assets/SetoKaiba-DL.png" style="height:40%;width:40%"/>
+    <Modal header="hier kommt ein Beispiel vorgelöst" @close="toggleModal">
+      
     </Modal>
+
+    </div>
+     <div v-if="showModal1">
+      <div v-if="state">
+        <Modal1 header="richtig" @close="showModal1=false" style="color:green">
+        
+        </Modal1>
+      </div>
+
+      <div v-else>
+        <Modal1 header="falsch" @close="showModal1=false" style="color:red">
+        
+        </Modal1>
+
+      </div>
 
     </div>
     
@@ -16,30 +31,38 @@
     <!--<h1>{{val}}</h1>  -->
   <h1>{{binary}}<h6 style="display:inline;font-size:12px">2</h6></h1>
 <input v-model="result" placeholder="edit me"  />
-<p>Message is: {{ result }}</p>
+<br><br><br>
+
   <button v-on:click="reset">
-    <h1>RESET</h1>
+    <img src="@/assets/reset.png" alt="">
   </button>
 
-  <button v-on:click="check">
-    <h1>abgeben</h1>
+  <button v-on:click="check()">
+    <p>Überprüfen</p>
     <h1 v-if="resultat&&abgabe"> richtig</h1>
  <h1 v-else-if="abgabe"> Nope</h1>
   </button>
 
     <button  @click="toggleModal" >
-    <h1>BEISPIEL</h1>
+    <img src="@/assets/help.png" alt="">
     </button>
-
+   <div>
+     <p>Als Hilfe hast du unten eine Tabelle mit den Werten
+        zu den Zweierpotenzen
+     </p>
+     <img src="@/assets/binaer.png" alt="">
+     </div>
+ 
     
 </template>
 
 
 <script>
 import Modal from '@/components/Modal.vue'
+import Modal1 from '@/components/Verifier.vue'
 
 export default {
-  components: {Modal},
+  components: {Modal,Modal1},
 
   data(){
     return{
@@ -48,7 +71,9 @@ export default {
     result:0,
     resultat:false,
     abgabe:false,
-    showModal:false
+    showModal:false,
+    showModal1:false,
+    state:false
     }
   },
   
@@ -67,14 +92,23 @@ export default {
       this.result=0
     },
     check(){
-      if(this.val==this.result)
+      if(this.val==this.result){
         this.resultat=true
-      else
+        this.state=true
+        }
+        
+      else{
         this.resultat=false
-      this.abgabe=true
+        this.state=false
+      }this.toggleModal1();
+        
+      
     },
     toggleModal(){
       this.showModal= !this.showModal
+    },
+    toggleModal1(){
+      this.showModal1=true;
     }
     
     }

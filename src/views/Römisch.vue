@@ -1,9 +1,25 @@
 <template>
 
 <div v-if="showModal">
-    <Modal header="sign me up" @close="toggleModal">
-    <img src="@/assets/SetoKaiba-DL.png" style="height:40%;width:40%"/>
+    <Modal header="Hier kommt ein Beispiel vorgelöst" @close="toggleModal">
+    
     </Modal>
+
+</div>
+
+<div v-if="showModal1">
+      <div v-if="state">
+        <Modal1 header="richtig" @close="showModal1=false" style="color:green">
+        
+        </Modal1>
+      </div>
+
+      <div v-else>
+        <Modal1 header="falsch" @close="showModal1=false" style="color:red">
+        
+        </Modal1>
+
+      </div>
 
     </div>
 
@@ -16,31 +32,10 @@
 
     <h1> {{roman}} </h1>
     
-<input v-model="result" placeholder="edit me" />
-<h1> (lösung ist: {{lösung}}) </h1>
+<input v-model="result" placeholder="" />
+<!--<h1> (lösung ist: {{lösung}}) </h1>-->
+<br>
 
-  <button v-on:click="reset">
-    <h1>RESET</h1>
-    </button>
-     
-
-    <button v-on:click="check">
-        <h1>abgeben</h1>
-        <div v-if="resultat&&abgabe"> 
-          <Modal header="" @close="toggleModal">
-          <h1>RICHTIG</h1>
-          </Modal>
-        </div>
-        <div v-else-if="abgabe">
-           <Modal header="" @close="toggleModal">
-          <h1>FALSCH</h1>
-          </Modal>
-        </div>
-   </button>
-
-   <button @click="toggleModal">
-    <h1>BEISPIEL</h1>
-    </button>
     <br>
 
      <div>
@@ -48,7 +43,26 @@
    <img src="@/assets/roemisch.png" style="display:inline-block"> 
   </div>
 
-  
+<div style="display:flex;margin-left:40%;">
+  <button v-on:click="reset">
+    <img src="@/assets/reset.png" alt="">
+    </button>
+     
+
+    <button v-on:click="check" style="margin-left:10px;">
+        <p>Überprüfen</p>
+        <div v-if="resultat&&abgabe"> 
+         
+        </div>
+        <div v-else-if="abgabe">
+           
+        </div>
+   </button>
+
+   <button @click="toggleModal" style="margin-left:10px;">
+    <h1>BEISPIEL</h1>
+    </button>
+    </div>
   
 
   
@@ -57,12 +71,13 @@
 
 <script>
 import Modal from '@/components/Modal.vue'
+import Modal1 from '@/components/Verifier.vue'
 
 
 
   
 export default {
-  
+  components: {Modal,Modal1},
   data(){
     return{
       roman:'',
@@ -77,7 +92,9 @@ export default {
      lösung:0,
      abgabe:false,
      resultat:false,
-     showModal:false
+     showModal:false,
+     showModal1:false,
+     state:false
      
     }
   },
@@ -160,18 +177,29 @@ export default {
       this.add('V',this.randV);
       this.add('I',this.randI);
       this.abgabe=false,
-      this.resultat=false
+      this.resultat=false,
+      this.result=''
 
     },
     check(){
-      if(this.lösung==this.result)
-        this.resultat=true
-      else
-        this.resultat=false
+      if(this.lösung==this.result){
+        this.resultat=true;
+        this.state=true;
+
+      }
+        
+      else{
+        this.resultat=false;
+        this.state=false;
+        }
       this.abgabe=true
+      this.toggleModal1();
     },
     toggleModal(){
       this.showModal=!this.showModal
+    },
+    toggleModal1(){
+      this.showModal1=true;
     }
   }
 }
