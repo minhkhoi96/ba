@@ -62,7 +62,7 @@ const routes = [
     component: Römisch
   },
   {
-    path: '/mix',
+    path: '/drei',
     name: 'Gemischtes',
     component: Gemischtes
   },

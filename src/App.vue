@@ -18,7 +18,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background: rgb(70, 175, 224);
+  background: rgb(70, 197, 191);
   
 }
 
@@ -37,6 +37,6 @@
 }
 
 body{
-  background: rgb(70, 175, 224);
+  background: rgb(70, 197, 191);
 }
 </style>

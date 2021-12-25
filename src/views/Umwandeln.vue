@@ -101,29 +101,26 @@
  
 
 <div style="display:flex;margin-left:40%;">
-    <button v-on:click="check()" style="margin-left:10px;">
+    <button class="button" v-on:click="check()" style="margin-left:10px;">
+      <img src="@/assets/test.png" style="height:40%;width:auto" alt="">
     <p>Überprüfen</p>
-    <div v-if="resultat&&abgabe"> 
-     
-    </div>
-    <div v-else-if="abgabe"> 
     
-  </div>
   </button>
 
  
  
 
-   <button  v-on:click="reset" style="margin-left:10px;">
+   <button class="button" v-on:click="reset" style="margin-left:10px;">
      
-  <img src="@/assets/reset.png" alt="">
-
+  <img src="@/assets/reset.png" style="height:40%;width:auto" alt="">
+<p>nächste Aufgabe</p>
   </button>
 
    
-<button @click="toggleModal" style="margin-left:10px;">
+<button class="button" @click="toggleModal" style="margin-left:10px;">
     
       <img src="@/assets/help.png" alt="">
+       <p>Anleitung</p>
       </button>
    </div>
 </template>
@@ -268,6 +265,15 @@ this.val= Math.floor(Math.random() * 9999) + 1,
    width: 10px
    
  }
+  .button {
+    cursor: pointer;
+   
+    /*background-color: #ffe5b2;*/
+    border-radius: 10px;
+    border: solid black;
+    border-width: thin;
+    
+  }
  
  
 </style>

@@ -202,7 +202,7 @@
  
  
 
-   <button  v-on:click="reset" style="margin-left:10px;">
+   <button  v-on:click="reset" style="margin-left:10px:">
      
   <img src="@/assets/reset.png" alt="">
 

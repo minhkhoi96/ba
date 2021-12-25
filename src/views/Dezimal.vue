@@ -1,48 +1,75 @@
 <template>
 <div v-if="showModal">
-    <Modal header="sign me up" @close="toggleModal">
-    <img src="@/assets/SetoKaiba-DL.png" style="height:40%;width:40%"/>
+    <Modal header="" @close="toggleModal">
+   
     </Modal>
 
+</div>
+<div v-if="showModal1">
+      <div v-if="state">
+        <Modal1 header="richtig" @close="showModal1=false" style="color:green">
+        
+        </Modal1>
+      </div>
+    
+
+      <div v-else>
+        <Modal1 header="falsch" @close="showModal1=false" style="color:red">
+        
+        </Modal1>
+
+      </div>
     </div>
   
     <h1>Wandle folgende Zahlen in ihre Binäre Darstellung um</h1>
 
     <h1> {{dec}} </h1>
-    <h1>(lösung ist: {{lösung}} )</h1>
     
-    <input v-model="result" placeholder="edit me"  />
-<p>Message is: {{ result }}</p>
+    
+    <input v-model="result" placeholder="Deine Lösung"  />
 
-  <div>
-  <button v-on:click="reset">
-    <h1>RESET</h1>
+<br>
+    <p>Als Hilfe hast du hier eine Tabelle mit den Zweierpotenzen </p>
+
+    <img src="@/assets/potenz.png" alt="">
+    <br><br>
+
+
+ <div style="display:flex;margin-left:40%;">
+    <button class="button" v-on:click="check()" style="margin-left:10px;">
+      <img src="@/assets/test.png" style="height:40%;width:auto" alt="">
+    <p>Überprüfen</p>
+    
   </button>
 
-   <button v-on:click="check">
-    <h1>abgeben</h1>
-    <h1 v-if="resultat&&abgabe"> richtig</h1>
- <h1 v-else-if="abgabe"> Nope</h1>
+ 
+ 
+
+   <button class="button" v-on:click="reset" style="margin-left:10px;">
+     
+  <img src="@/assets/reset.png" style="height:40%;width:auto" alt="">
+<p>nächste Aufgabe</p>
   </button>
 
-  <button @click="toggleModal">
-    <h1>BEISPIEL</h1>
-    </button>
-  </div>
-
+   
+<button class="button" @click="toggleModal" style="margin-left:10px;">
+    
+      <img src="@/assets/help.png" alt="">
+       <p>Anleitung</p>
+      </button>
+   </div>
   
 
-  <a class="container">
-       Tabelle
-    </a>
+  
 </template>
 
 
 <script>
 import Modal from '@/components/Modal.vue'
+import Modal1 from '@/components/Verifier.vue'
 
 export default {
-  components:{Modal},
+  components:{Modal,Modal1},
   data(){
     return {
       dec: Math.floor(Math.random() * 500) + 1,
@@ -50,7 +77,9 @@ export default {
       abgabe:false,
       resultat:false,
       lösung:'',
-      showModal:false
+      showModal:false,
+      showModal1:false,
+      state:false
     }
   },
    created: function(){
@@ -64,17 +93,23 @@ export default {
     toggleModal(){
       this.showModal=!this.showModal
     },
+    toggleModal1(){
+      this.showModal1=true;
+    },
     reset(){
       this.dec =Math.floor(Math.random() * 1000) + 1,
       this.lösung=this.dec.toString(2),
       this.result=''
     },
     check(){
-      if(this.result==this.lösung)
+      if(this.result==this.lösung){
         this.resultat=true
+        this.state=true
+      }
+        
       else 
-        this.resultat=false
-      this.abgabe=true
+        this.state=false
+      this.toggleModal1();
 
     }
   }
@@ -95,6 +130,15 @@ export default {
     background: white;
     
 }
+.button {
+    cursor: pointer;
+   
+    /*background-color: #ffe5b2;*/
+    border-radius: 10px;
+    border: solid black;
+    border-width: thin;
+    
+  }
 </style>
 
 

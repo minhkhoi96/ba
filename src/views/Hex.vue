@@ -1,35 +1,55 @@
 <template>
     <div v-if="showModal">
-    <Modal header="sign me up" @close="toggleModal">
-    <img src="@/assets/SetoKaiba-DL.png" style="height:40%;width:40%"/>
+    <Modal header="Hier kommt eine Beispielaufgabe" @close="toggleModal">
+    
     </Modal>
+    </div>
+
+     <div v-if="showModal1">
+      <div v-if="state">
+        <Modal1 header="richtig" @close="showModal1=false" style="color:green">
+        
+        </Modal1>
+      </div>
+
+      <div v-else>
+        <Modal1 header="falsch" @close="showModal1=false" style="color:red">
+        
+        </Modal1>
+
+      </div>
 
     </div>
+
+    
     <h1>Welche Dezimalzahl wird durch folgende hexadezimalzahl dargestellt?</h1>
     <p>(lösung ist:{{lösung}})</p>
     <h1>{{hex}}<h6 style="display:inline;font-size:12px">16</h6></h1>
 
-    <input v-model="result" placeholder="edit me" />
+    <input v-model="result" placeholder="Gib Hier deine Lösung ein" />
 
-    <div>
-    <button v-on:click="reset">
-    <h1>RESET</h1>
+    <br>
+    <p>Als Hilfe hast du hier eine Tabelle mit den Hexadezimalzahlen </p>
+
+    <img src="@/assets/hex.png" alt="">
+    <br><br>
+    <div style="display:flex;margin-left:40%;">
+      <button v-on:click="reset"  style="margin-left:10px;">
+      <img src="@/assets/reset.png" style="height:40%;width:auto" alt="">
+      <p>nächste Aufgabe</p>
     </button>
     
-    <button v-on:click="check">
-    <h1>abgeben</h1>
-    <h1 v-if="resultat&&abgabe"> richtig</h1>
-    <h1 v-else-if="abgabe"> Nope</h1>
+    <button v-on:click="check()"  style="margin-left:10px;">
+    <p>Überprüfen</p>
+    
     </button>
 
-    <button @click="toggleModal">
-    <h1>BEISPIEL</h1>
+    <button @click="toggleModal"  style="margin-left:10px;">
+    <img src="@/assets/help.png" alt="">
     </button>
     
     </div>
-    <a class="container">
-       Tabelle
-    </a>
+    
   
     
   
@@ -39,18 +59,20 @@
 
 <script>
 import Modal from '@/components/Modal.vue'
-
+import Modal1 from '@/components/Verifier.vue'
 
 export default {
-  components: {Modal},
+  components: {Modal,Modal1},
   data(){
     return{
       hex:'',
-      result:0,
+      result:'',
       lösung:0,
       abgabe:false,
       resultat:false,
-      showModal:false
+      showModal:false,
+      showModal1:false,
+      state:false
     }
   },
 
@@ -80,11 +102,21 @@ export default {
     toggleModal(){
       this.showModal=!this.showModal
     },
+    toggleModal1(){
+      this.showModal1=true
+    },
     check(){
-      if(this.lösung==this.result)
-        this.resultat=true
-      else  
+      if(this.lösung==this.result){
+        this.resultat=true,
+        this.state=true
+
+      }
+        
+      else  {
+        this.state = false
         this.resultat=false
+      } 
+      this.toggleModal1();  
       this.abgabe=true
     }
 

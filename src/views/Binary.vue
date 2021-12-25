@@ -33,25 +33,30 @@
 <input v-model="result" placeholder="edit me"  />
 <br><br><br>
 
-  <button v-on:click="reset">
-    <img src="@/assets/reset.png" alt="">
-  </button>
-
-  <button v-on:click="check()">
-    <p>Überprüfen</p>
-    <h1 v-if="resultat&&abgabe"> richtig</h1>
- <h1 v-else-if="abgabe"> Nope</h1>
-  </button>
-
-    <button  @click="toggleModal" >
-    <img src="@/assets/help.png" alt="">
-    </button>
+  
    <div>
      <p>Als Hilfe hast du unten eine Tabelle mit den Werten
         zu den Zweierpotenzen
      </p>
      <img src="@/assets/binaer.png" alt="">
      </div>
+
+<br><br><br>
+     <div style="display:flex;margin-left:40%;">
+  <button v-on:click="reset" style="margin-left:10px;">
+    <img src="@/assets/reset.png" alt="">
+  </button>
+
+  <button v-on:click="check()" style="margin-left:10px;">
+    <p>Überprüfen</p>
+    <h1 v-if="resultat&&abgabe"> </h1>
+ <h1 v-else-if="abgabe"> Nope</h1>
+  </button>
+
+    <button  @click="toggleModal" style="margin-left:10px;">
+    <img src="@/assets/help.png" alt="">
+    </button>
+    </div>
  
     
 </template>

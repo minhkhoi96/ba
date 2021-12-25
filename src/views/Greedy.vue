@@ -1,5 +1,7 @@
 <template>
-<p>{{random(0,10)}}</p>
+
+    <div v-if="showModal">
+    <Modal header="" @close="toggleModal">
     <p style="text-align: center;margin-left:20%;margin-right:20%">Wir wollen Zahlen in dezimaler Zahlendarstellung in die binäre Darstellung mit dem
         Greedy Verfahren umwandeln. 
         Dazu überlegen wir uns für eine gegebene Zahl, zum Beispiel 200, welche die grösste
@@ -8,14 +10,16 @@
         Die nächsten Münzen 32 = 2^5 und 16 = 2^4 passen nicht in die 8 rein aber wir sehen,
         dass 8 = 2^3 also können wir den Restbetrag vollständig mit der 8er Münze abdecken
         und erhalten 11001000
-    </p> <div class="square"></div>
-(<i>a</i> + <i>b</i> + √<i>c</i>)<span class=sup>2<i>x</i> + <i>b</i></span>
-    <div v-if="showModal">
-    <Modal header="sign me up" @close="toggleModal">
-    <img src="@/assets/SetoKaiba-DL.png" style="height:30%;width:30%"/>
+    </p>
+   (<i>a</i> + <i>b</i> + √<i>c</i>)<span class=sup>2<i>x</i> + <i>b</i></span>
     </Modal>
     </div>
-     <button @click="toggleModal">open Modal </button>
+
+   
+
+    
+
+     
 
     <br>
    <div>
@@ -23,7 +27,9 @@
     <template v-if="(target-sofar==0)"><span style="color:green;" >Restbetrag ist: {{target-sofar}}</span> </template>
     <template v-else> Restbetrag ist: {{target-sofar}} </template>
     </span>
-   </div>
+   
+</div>
+<p>Damit du siehst was gerechnet wird, siehst du unten den Rechnungsverlauf:</p>
       <a class=container>
       Rechnungsverlauf: 
       <br>
@@ -36,10 +42,13 @@
       </template>
   
     </a>
+    
     <h3 v-if="tooBig" style="color:red;">Deine gewählte Zahl passt nicht in den Restbetrag hinein</h3>
     
      <h3 v-else-if ="better" style="color:red;">Deine gewählte Zahl ist nicht die grösste Zahl, die in den Restbetrag hineinpasst</h3>
     <h3 v-else> &nbsp;&nbsp;&nbsp; </h3>
+
+
 
    
   
@@ -69,6 +78,7 @@
      <a class="square"> &nbsp; {{two}}  </a> 
      <a class="square"> &nbsp; {{one}}  </a>
      <a class="square"> &nbsp; {{zero}}  </a>  
+     
     <!--
     <button  v-on:click="if (target>56) {return;}else{}">56</button>
     <button  v-on:click="if (target>32){return;}else{}">32</button>
@@ -77,17 +87,26 @@
     <button  v-on:click="if (target>4){return;}else{}">4</button>
     <button  v-on:click="if (target>2){return;}else{}">2</button>
     <button  v-on:click="if (target>1){return;}else{}">1</button> -->
-     <template v-if="target-sofar==0">
+     <div v-if="target-sofar==0">
+       
       <p style="color:green">Super du hast nun die Binäre Darstellung von {{target}} herausbekommen: {{target.toString(2)}}</p> 
-
-
+      
+    </div>
+    <div v-else>
+    <br><br> &nbsp; &nbsp; &nbsp;
+    </div>
+    
+    <div style="display:flex;margin-left:40%;">
+    <button  v-on:click="reset" style="margin-left:10px;">
+  <img src="@/assets/reset.png" style="height:40%;width:auto" alt="">
+<p>nächste Aufgabe</p>
+  </button>
+  <button @click="toggleModal" style="margin-left:10px;">
+    
+      <img src="@/assets/help.png" alt="">
+      </button>
   
-    </template>
-    <br>
-    <br>
-    <br>
-    <br>
-
+</div>
     
     
 </template>
@@ -96,7 +115,7 @@
 
 <script>
 import Modal from '@/components/Modal.vue'
-import { computed } from '@vue/reactivity';
+
 
 
 export default {
@@ -150,6 +169,45 @@ export default {
   methods:{
       random(min,max) {   //range [min,max)
             return Math.floor(Math.random() * (max - min)) + min;
+        },
+        reset(){
+          this.list=[],
+           this.sofar=0,
+          this.eight=0,
+          this.seven=0,
+          this.six=0,
+          this.five=0,
+          this.four=0,
+          this.three=0,
+          this.two=0,
+          this.one=0,
+          this.zero=0,
+            this.tooBig=false,
+          this.better=false,
+          this.showModal=false,
+          this.reversed=false,
+          this.activate7=false,
+         this. pre7=0,
+          this.activate6=false,
+          this.pre6=0,
+          this.activate5=false,
+          this.pre5=0,
+          this.activate4=false,
+          this.rest4=0,
+          this.activate3=false,
+         this.rest3=0,
+          this.activate2=false,
+      this.rest2=0,
+      this.activate1=false,
+      this.rest1=0,
+     this.activate0=false,
+      this.rest0=0,
+      this.pre=0,
+      this.first=true,
+      this.length=0,
+      this.target=this.random(0,256)
+     
+      
         },
        
       clickhandler(toSub,power){
@@ -225,7 +283,7 @@ export default {
   margin-right: 10px;
 }
 .sup {
-  position: relative;
+  
   bottom: 1ex; 
   font-size: 80%;
 }
@@ -234,10 +292,11 @@ export default {
   display: inline-block;
   flex-direction: column;
   align-items:center;
-    min-height: 200px;
+    min-height: 250px;
     width: 200px;
     border: 1px solid black;
-    margin: 0 10px 10px 200px;
+    margin: 0px 15% 10px 200px;
+
     background: white;
     
 }

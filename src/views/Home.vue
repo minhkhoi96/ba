@@ -2,7 +2,7 @@
 
   <h1> [HIER KOMMT EIN TITELBILD]</h1>
   <div class="home">
-    <h2>Hallo hier findest du aufgaben zum buch Einfach Informatik 7-8 ZUM KAPITEL DARSTELLUNG VON ZAHLEN :3</h2>
+    <h2>Hallo hier findest du aufgaben zum buch Einfach Informatik 7-8 ZUM KAPITEL DARSTELLUNG VON ZAHLEN </h2>
     
   </div>
   <div class="box">
@@ -35,14 +35,17 @@
     hexadezimale Zahlen lesen
   </div>
   </router-link>
-
+<div class="box">
+    <router-link to="/greedy">Binäre Zahlendarstellung</router-link>
+    <img src="@/assets/one.png"  />
+  </div>
    <div class="box">
     <router-link to="/dezimal">Dezimal zu Binär</router-link>
      <img src="@/assets/two.png"  />
   </div>
 
   <div class="box">
-    <router-link to="/MIX">3-adische Darstellung lesen</router-link>
+    <router-link to="/drei">3-adische Darstellung lesen</router-link>
      <img src="@/assets/one.png"  />
   </div>
 
@@ -57,10 +60,7 @@
     <img src="@/assets/four.png"  />
   </div>
 
-  <div class="box">
-    <router-link to="/greedy">Greedy</router-link>
-    <img src="@/assets/one.png"  />
-  </div>
+  
 
  
   
