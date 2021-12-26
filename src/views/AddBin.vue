@@ -22,21 +22,39 @@
     </div>
     <h2>Addiere die beiden binäre Zahlen und gib ihre Summe als binäre Zahl</h2>
 
-    <div style="display:flex;flex-direction:column;">
-     <p>{{bin1}}</p> 
-     + {{bin2}}
-    </div>
- <h1></h1>
- 
-   <input v-model="result0" placeholder="" style="width:1%;height:20px" />
-    <input v-model="result1" placeholder="" style="width:1%;height:20px" />
-    <input v-model="result2" placeholder="" style="width:1%;height:20px" />
-    <input v-model="result3" placeholder="" style="width:1%;height:20px" />
-    <input v-model="result4" placeholder="" style="width:1%;height:20px" />
-     <input v-model="result5" placeholder="" style="width:1%;height:20px" />
-     <br><br><br><br><br>
+    
+ <br><br>
 
-    <div style="display:flex;margin-left:40%;">
+  <div class="container" >
+    &nbsp;&nbsp;
+  <template v-for='i in 4' :key='i' >
+    {{list1[i-1]}}&nbsp;
+  </template>
+  
+  <br>
+  +
+  <template v-for='i in 4' :key='i'  >
+    {{list2[i-1]}}&nbsp;
+  </template>
+  <hr style="height:1px;width:80px;background-color:black;">
+    &nbsp;&nbsp;
+ 
+
+ <input v-model="msg0" placeholder="" style="width:7px;margin-right:05px">
+ <input v-model="msg1" placeholder="" style="width:7px;margin-right:5px">
+ <input v-model="msg2" placeholder="" style="width:7px;margin-right:5px">
+ <input v-model="msg3" placeholder="" style="width:7px;margin-right:5px">
+
+<br><br>
+<input type="checkbox" id="checkbox" v-model="checked">
+<label for="checkbox">Überschuss</label>
+<br>
+
+  </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{{l0+l1+l2+l3}}
+
+  <div style="display:flex;margin-left:40%;">
     <button v-on:click="reset" style="margin-left:10px;">
     <img src="@/assets/reset.png" style="height:40%;width:auto" alt="">
     <p>nächste Aufgabe</p>
@@ -51,7 +69,6 @@
     <img src="@/assets/help.png" alt="">
     </button>
   </div>
-  
   
 </template>
 
@@ -68,16 +85,17 @@ export default {
 
   data(){
     return{
-      val1: Math.floor(Math.random() * 32) ,
-      val2: Math.floor(Math.random() * 32) ,
-      bin1:0,
-      bin2:0,
-      result0:'',
-      result1:'',
-      result2:'',
-      result3:'',
-      result4:'',
-      result5:'',
+     
+      list1:[0,0,0,0],
+      list2:[0,0,0,0],
+      msg1:'',
+      msg2:'',
+      msg3:'',
+      msg0:'',
+      l1:'',
+      l2: '',
+      l3:'',
+      l0:'',
       final:'',
       lösung:'',
       resultat:false,
@@ -85,7 +103,9 @@ export default {
       showModal:false,
       länge:0,
       showModal1:false,
-      state:false
+      state:false,
+      of:false,
+      checked:false
     }
   },
   created: function(){
@@ -94,41 +114,143 @@ export default {
 
   methods: {
     init(){
-      this.bin1 = (this.val1).toString(2);
-      this.bin2 = (this.val2).toString(2);
-      this.lösung= ((this.val1)+(this.val2)).toString(2);
+     //0 1 2 3 
+
+     //letztes bit
+      this.list1[3]= this.rand();
+      this.list2[3]=this.rand();
+      if(this.list1[3]==1 && this.list2[3]==1){
+        this.of=true
+        this.l3="0"
+      }else if(this.list1[3]==1 || this.list2[3]==1)
+        this.l3=1;
+        else this.l3=0;
+        
+      //zweit letztes bit
+      this.list1[2]= this.rand();
+      this.list2[2]=this.rand();
+     if(this.list1[2]==1 && this.list2[2]==1 && this.of){
+        this.of=true
+        this.l2="1"
+      }else if(this.list1[2]==1 && this.list2[2]==1){
+        this.l2="0";
+        this.of=true;}
+        else if ((this.list1[2]==1 || this.list2[2]==1) && this.of){
+          this.l2="0";
+          this.of=true;
+        } else if(this.list1[2]==1 || this.list2[2]==1){
+          this.l2="1";
+          this.of=false;
+        }
+         else if(this.of){
+           this.l2="1";
+           this.of=false
+         }
+         else{
+          this.l2="0"
+         }
+         
+      
+
+      //erstes bit
+      this.list1[1]= this.rand();
+      this.list2[1]=this.rand();
+      if(this.list1[1]==1 && this.list2[1]==1 && this.of){
+        this.of=true
+        this.l1="1"
+      }else if(this.list1[1]==1 && this.list2[1]==1){
+        this.l1="0";
+        this.of=true;}
+        else if ((this.list1[1]==1 || this.list2[1]==1) && this.of){
+          this.l1="0";
+          this.of=true;
+        } else if(this.list1[1]==1 || this.list2[1]==1){
+          this.l1="1";
+          this.of=false;
+        }
+         else if(this.of){
+           this.l1="1";
+           this.of=false;
+         }
+         else{
+          this.l1="0"; 
+         }
+         
+
+        
+      //0tes bit
+      this.list1[0]= this.rand();
+      this.list2[0]=1-this.list1[0];
+
+       if(this.list1[0]==1 && this.list2[0]==1 && this.of){
+        this.of=true
+        this.l0="1"
+      }else if(this.list1[0]==1 && this.list2[0]==1){
+        this.l0="0";
+        this.of=true;}
+        else if ((this.list1[0]==1 || this.list2[0]==1) && this.of){
+          this.l0="0";
+          this.of=true;
+        } else if(this.list1[0]==1 || this.list2[0]==1){
+          this.l0="1";
+          this.of=false;
+        }
+         else if(this.of){
+           this.l0="1";
+           this.of=false;
+         }
+         else{
+          this.l0="0"; 
+         }
+
+     
+
+      
+      
+    },
+    rand(){
+      var y = Math.random();
+          if (y < 0.5)
+            y = 0
+        else
+        y= 1  
+      return y;
     },
     toggleModal(){
       this.showModal=!this.showModal
     },
     reset(){
-      this.val1=Math.floor(Math.random() * 32) + 1,
-      this.val2=Math.floor(Math.random() * 32) + 1,
-      this.bin1 = (this.val1).toString(2),
-      this.bin2 = (this.val2).toString(2),
-      this.lösung= ((this.val1)+(this.val2)).toString(2);
-      this.final='',
-      this.result='',
-      this.abgabe=false,
-      this.result0='',
-      this.result1='',
-      this.result2='',
-      this.result3='',
-      this.result4='',
-      this.result5=''
+      
+      this.msg1='',
+      this.msg2='',
+      this.msg3='',
+      this.msg0='',
+      this.l1='',
+      this.l2= '',
+      this.l3='',
+      this.l0='',
+      
+      
+      
+      
+      this.showModal=false,
+     
+      this.showModal1=false,
+      this.state=false,
+      this.of=false,
+      this.checked=false
+     this.init();
+
 
     },
     check(){
-      this.final='';
-      this.final=this.final.concat(this.result0,this.result1,this.result2,this.result3,this.result4,this.result5);
-      while(this.lösung.length<6)
-        this.lösung='0'.concat(this.lösung)
-      if(this.final==this.lösung){
-        this.resultat=true
+     
+      if(this.msg0==this.l0 &&this.msg1==this.l1&&this.msg2==this.l2 &&this.msg3==this.l3&&this.of==this.checked){
+        
         this.state=true;
         }
       else{
-        this.resultat=false;
+        
         this.state=false;}
       this.abgabe=true
       this.toggleModal1();
@@ -142,3 +264,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.container{
+  background-color: white;
+  margin: auto;
+  width: 150px;
+  height: auto;
+}
+</style>

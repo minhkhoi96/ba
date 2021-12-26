@@ -67,7 +67,7 @@
    <!--
    WE PRINT ALLL OUR Hunderter
  -->
-<div style="display:flex;;flex-direction: column;float:left;row-gap:10px;margin-left:10px;margin-right:10px">
+<div style="display:flex;flex-direction: column;float:left;row-gap:10px;margin-left:10px;margin-right:10px">
 <div v-for='index in lengthH' :key='index'>
               
               <button v-on:click="array[1].pop();lengthH--;curr-=100;abgabe=false" style="width: 70px;height:40px"  >
@@ -272,6 +272,7 @@ this.val= Math.floor(Math.random() * 9999) + 1,
     border-radius: 10px;
     border: solid black;
     border-width: thin;
+    
     
   }
  
