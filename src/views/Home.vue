@@ -60,46 +60,77 @@
   </router-link>
 
 
-  
-   
-<div class="box">
-    <router-link to="/roemisch">Vorrömische Zahlen lesen</router-link>
-     <img src="@/assets/one.png"  />
-  </div>
-  
-
-   <div class="box">
-    <router-link to="/addBin">Binäre Zahlen addieren</router-link>
-     <img src="@/assets/two.png"  />
-  </div>
-
-   <router-link to="/Hex">
-   <div class="box">
-       <img src="@/assets/one.png"  />
-    hexadezimale Zahlen lesen
+  <router-link to="/roemisch">
+  <div class="box">
+    Vorrömische Zahlen lesen
+    <img src="@/assets/roman2.png" style="width:86%;height:60%">
+    <div>
+      <img src="@/assets/biber.png" style="height:8%;width:8%;" />
+       <img src="@/assets/biber.png" style="height:8%;width:8%;" />
+    </div>
   </div>
   </router-link>
 
-   <div class="box">
-    <router-link to="/dezimal">Dezimal zu Binär</router-link>
-     <img src="@/assets/two.png"  />
-  </div>
-
+   <router-link to="/addBin">
   <div class="box">
-    <router-link to="/drei">3-adische Darstellung lesen</router-link>
-     <img src="@/assets/one.png"  />
+    Vorrömische Zahlen lesen
+    <img src="@/assets/add.png" style="width:72%;height:60%">
+    <div>
+      <img src="@/assets/biber.png" style="height:8%;width:8%;" />
+       <img src="@/assets/biber.png" style="height:8%;width:8%;" />
+    </div>
   </div>
+  </router-link>
+   
+
+  <router-link to="/Hex">
+  <div class="box">
+    hexadezimale Zahlen lesen
+    <img src="@/assets/hexa.png" style="width:50%;height:60%">
+    <div>
+      <img src="@/assets/biber.png" style="height:8%;width:8%;" />
+       <img src="@/assets/biber.png" style="height:8%;width:8%;" />
+    </div>
+  </div>
+  </router-link>
+
+
+  <router-link to="/dezimal">
+  <div class="box">
+    Dezimal zu Binär
+    <img src="@/assets/binaryf.png" style="width:95%;height:60%">
+    <div>
+      <img src="@/assets/biber.png" style="height:8%;width:8%;" />
+       <img src="@/assets/biber.png" style="height:8%;width:8%;" />
+    </div>
+  </div>
+  </router-link>
+
+   
+<router-link to="/drei">
+  <div class="box">
+    3-adische Darstellung lesen
+    <img src="@/assets/tri.png" style="width:44%;height:60%">
+    <div>
+      <img src="@/assets/biber.png" style="height:8%;width:8%;" />
+       <img src="@/assets/biber.png" style="height:8%;width:8%;" />
+    </div>
+  </div>
+  </router-link>
 
   
 
-
-
-  
-
-  <div class="box">
-    <router-link to="/challenge">Münzen tauschen</router-link>
-    <img src="@/assets/four.png"  />
+  <router-link to="/challenge">
+  <div class="box" >
+    Münzen tauschen
+    <div>
+      <img src="@/assets/coinss.png" style="width:50%;"> <br>
+      <img src="@/assets/biber.png" style="height:8%;width:8%;" />
+      <img src="@/assets/biber.png" style="height:8%;width:8%;" />
+    </div>
   </div>
+  </router-link>
+
 
   
 
