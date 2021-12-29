@@ -18,7 +18,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background: rgb(70, 197, 191);
+  background: rgb(60, 202, 245); /*innerer teil */
   
 }
 
@@ -33,10 +33,10 @@
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #050505; /*farbe wenn man auf link ist drauf ist*/
 }
 
 body{
-  background: rgb(70, 197, 191);
+  background: rgb(60, 202, 245) /*äusserer  teil*/
 }
 </style>

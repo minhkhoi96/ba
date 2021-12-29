@@ -12,6 +12,7 @@ import Hex from '../views/Hex.vue'
 import Challenge from '../views/Challenge.vue'
 import Kartenaddition from '../views/Kartenaddition.vue'
 import Greedy from '../views/Greedy.vue'
+import Test from '../views/Show.vue'
 
 
 const routes = [
@@ -19,7 +20,12 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  }, {
+    path: '/test',
+    name: 'Test',
+    component: Test
   },
+
   {
     path: '/greedy',
     name: 'Greedy',

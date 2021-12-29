@@ -1,23 +1,67 @@
 <template>
 
-  <h1> [HIER KOMMT EIN TITELBILD]</h1>
-  <div class="home">
-    <h2>Hallo hier findest du aufgaben zum buch Einfach Informatik 7-8 ZUM KAPITEL DARSTELLUNG VON ZAHLEN </h2>
-    
-  </div>
-  <div class="box">
-    <router-link to="/umwandeln">Kartendarstellung</router-link>
-     <img src="@/assets/one.png"  />
-  </div>
-  <div class="box">
-    <router-link to="/addition">Kartenaddition</router-link>
-    <img src="@/assets/two.png"  />
-  </div>
-   <div class="box">
-    <router-link to="/binary">Binaere Zahlen interpretieren</router-link>
-     <img src="@/assets/one.png"  />
+ 
+  <div >
+      <h2>Hallo hier findest du aufgaben zum buch Einfach Informatik 7-8 ZUM KAPITEL DARSTELLUNG VON ZAHLEN </h2>
+      <img src="@/assets/start.png" style="height:20%;width:30%;"/>
   </div>
 
+
+  <router-link to="/umwandeln">
+  <div class="box">
+    Kartendarstellung
+    <div>
+      <img src="@/assets/cards.png" style="height:50%;width:50%;margin-top:30px;" />
+    </div>
+    <div>
+      <img src="@/assets/biber.png" style="height:8%;width:8%;" />
+    </div>
+  </div>
+  </router-link>
+
+
+
+  <router-link to="/addition">
+  <div class="box">
+    Kartenaddition
+    <div>
+      <img src="@/assets/cards.png" style="height:50%;width:50%;margin-top:30px;" />
+    </div>
+    <div>
+      <img src="@/assets/biber.png" style="height:8%;width:8%;" />
+      <img src="@/assets/biber.png" style="height:8%;width:8%;" />
+    </div>
+  </div>
+  </router-link>
+
+
+
+
+  <router-link to="/greedy">
+  <div class="box">
+    Binäre Zahlendarstellung
+    <img src="@/assets/binaryf.png" style="width:95%;height:60%">
+    <div>
+      <img src="@/assets/biber.png" style="height:8%;width:8%;" />
+    </div>
+  </div>
+  </router-link>
+
+
+  <router-link to="/binary">
+  <div class="box">
+    Binäre Zahlend interpretieren
+    <img src="@/assets/reverse.png" style="width:89%;height:60%">
+    <div>
+      <img src="@/assets/biber.png" style="height:8%;width:8%;" />
+       <img src="@/assets/biber.png" style="height:8%;width:8%;" />
+    </div>
+  </div>
+  </router-link>
+
+
+  
+   
 <div class="box">
     <router-link to="/roemisch">Vorrömische Zahlen lesen</router-link>
      <img src="@/assets/one.png"  />
@@ -35,10 +79,7 @@
     hexadezimale Zahlen lesen
   </div>
   </router-link>
-<div class="box">
-    <router-link to="/greedy">Binäre Zahlendarstellung</router-link>
-    <img src="@/assets/one.png"  />
-  </div>
+
    <div class="box">
     <router-link to="/dezimal">Dezimal zu Binär</router-link>
      <img src="@/assets/two.png"  />
@@ -62,10 +103,14 @@
 
   
 
- 
+ <div class="box">
+    <router-link to="/test">Vorschau</router-link>
+     
+  </div>
+  
   
 
- <h2>test</h2>
+
   
 </template>
 
@@ -91,10 +136,12 @@ export default {
  .box {
    padding: 50px 0;
    width: 300px;
+   height: auto;
    text-align: center;
-   background: #ddd;
+   background: rgb(248, 161, 62);
    margin: 20px;
-   display: inline-block
+   display: inline-block;
+   border-radius: 10px ;
    
 
  }
