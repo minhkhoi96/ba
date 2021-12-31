@@ -6,7 +6,7 @@
        Wenn du eine Karte löschen willst, klicke auf die Karte!
     </p>
 
-  <video src="@/assets/karten.mp4" id="video-container" style="width:70%;height:auto" controls></video>
+  <video src="@/assets/umwandelnv.mp4" id="video-container" style="width:70%;height:auto" controls></video>
     </Modal>
 
     </div>
@@ -14,30 +14,30 @@
     
     <div v-if="showModal1">
       <div v-if="state">
-        <Modal1 header="richtig" @close="showModal1=false" style="color:green">
-        
+        <Modal1 header="SUPER!" @close="showModal1=false" style="color:green">
+        <img src="@/assets/right.png" alt="">
         </Modal1>
       </div>
 
       <div v-else>
-        <Modal1 header="falsch" @close="showModal1=false" style="color:red">
+        <Modal1 header="das stimmt noch nicht ganz" @close="showModal1=false" style="color:red">
         
         </Modal1>
 
       </div>
 
     </div>
-    <h2>Stelle die folgende Zahl mit den folgenden Karten dar:</h2>
+    <h2>Stelle die folgende Zahl mit den unteren Karten dar:</h2>
    
   
  
 
     <h1>{{val}}</h1>
-<button v-on:click="addtausend">1000</button>
+<button v-on:click="addtausend">1000</button>&nbsp;
 
- <button v-on:click="addhundert">100</button>
- <button v-on:click="addzehn">10</button>
- <button v-on:click="eins">1</button>
+ <button v-on:click="addhundert">100</button>&nbsp;
+ <button v-on:click="addzehn">10</button>&nbsp;
+ <button v-on:click="eins">1</button>&nbsp;
  
  
   <!--
@@ -52,14 +52,22 @@
  -->
  
     
-    <div style="margin-left:35%">
+  <div style="margin-left:38%">
  <div style="display:flex;;flex-direction: column;float:left;row-gap:10px;margin-left:10px;margin-right:10px">
+<div v-if="(lengthT==0)">
+                <button style="width: 70px;height:40px;background-color:grey;border: solid black;
+    border-width: thin;
+    ">1000</button>
+              </div>
 <div v-for='index in lengthT' :key='index' >
               
-              <button v-on:click="array[0].pop();lengthT--;curr-=1000;abgabe=false" style="width: 70px;height:40px" >
+              
+                <button v-on:click="array[0].pop();lengthT--;curr-=1000;abgabe=false" style="width: 70px;height:40px" >
               <!--<img src="@/assets/logo.png" style="width:150px;height:150px;float:left" /> -->
               1000
-              </button>
+              </button> 
+              
+              
             </div>
         <h1> </h1>
  </div>
@@ -67,7 +75,13 @@
    <!--
    WE PRINT ALLL OUR Hunderter
  -->
+ 
 <div style="display:flex;flex-direction: column;float:left;row-gap:10px;margin-left:10px;margin-right:10px">
+  <div v-if="(lengthH==0)">
+                <button style="width: 70px;height:40px;background-color:grey;border: solid black;
+    border-width: thin;
+    ">100</button>
+              </div>
 <div v-for='index in lengthH' :key='index'>
               
               <button v-on:click="array[1].pop();lengthH--;curr-=100;abgabe=false" style="width: 70px;height:40px"  >
@@ -78,6 +92,11 @@
 </div>
 
 <div style="display:flex;;flex-direction: column;float:left;row-gap:10px;margin-left:10px;margin-right:10px">
+  <div v-if="(lengthZ==0)">
+                <button style="width: 70px;height:40px;background-color:grey;border: solid black;
+    border-width: thin;
+    ">10</button>
+              </div>
 <div v-for='index in lengthZ' :key='index'>
               <button v-on:click="array[2].pop();lengthZ--;curr-=10;abgabe=false" style="width: 70px;height:40px" >
               10
@@ -86,6 +105,11 @@
 </div>
 
 <div style="display:flex;;flex-direction: column;float:left;row-gap:10px;margin-left:10px;margin-right:10px">
+  <div v-if="(lengthE==0)">
+                <button style="width: 70px;height:40px;background-color:grey;border: solid black;
+    border-width: thin;
+    ">1</button>
+              </div>
 <div v-for='index in lengthE' :key='index'>
               <button v-on:click="array[3].pop();lengthE--;curr-=1;abgabe=false"  style="width: 70px;height:40px">
               
@@ -97,7 +121,7 @@
  </div>
  
  <h1></h1>
- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+ <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
  
 
 <div style="display:flex;margin-left:40%;">
@@ -119,7 +143,7 @@
    
 <button class="button" @click="toggleModal" style="margin-left:10px;">
     
-      <img src="@/assets/help.png" alt="">
+      <img src="@/assets/help.png" alt="" style="height:43%"> 
        <p>Anleitung</p>
       </button>
    </div>

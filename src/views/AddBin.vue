@@ -52,7 +52,7 @@
 
   </div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-{{l0+l1+l2+l3}}
+<!--{{l0+l1+l2+l3}}-->
 
   <div style="display:flex;margin-left:40%;">
     <button v-on:click="reset" style="margin-left:10px;">

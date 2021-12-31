@@ -3,7 +3,7 @@
  
   <div >
       <h2>Hallo hier findest du aufgaben zum buch Einfach Informatik 7-8 ZUM KAPITEL DARSTELLUNG VON ZAHLEN </h2>
-      <img src="@/assets/start.png" style="height:20%;width:30%;"/>
+      <img src="@/assets/start.png" style="height:25%;width:25%;"/>
   </div>
 
 
@@ -60,33 +60,12 @@
   </router-link>
 
 
-  <router-link to="/roemisch">
-  <div class="box">
-    Vorrömische Zahlen lesen
-    <img src="@/assets/roman2.png" style="width:86%;height:60%">
-    <div>
-      <img src="@/assets/biber.png" style="height:8%;width:8%;" />
-       <img src="@/assets/biber.png" style="height:8%;width:8%;" />
-    </div>
-  </div>
-  </router-link>
+ 
 
    <router-link to="/addBin">
   <div class="box">
-    Vorrömische Zahlen lesen
+    Binäre Zahlen Addieren
     <img src="@/assets/add.png" style="width:72%;height:60%">
-    <div>
-      <img src="@/assets/biber.png" style="height:8%;width:8%;" />
-       <img src="@/assets/biber.png" style="height:8%;width:8%;" />
-    </div>
-  </div>
-  </router-link>
-   
-
-  <router-link to="/Hex">
-  <div class="box">
-    hexadezimale Zahlen lesen
-    <img src="@/assets/hexa.png" style="width:50%;height:60%">
     <div>
       <img src="@/assets/biber.png" style="height:8%;width:8%;" />
        <img src="@/assets/biber.png" style="height:8%;width:8%;" />
@@ -105,6 +84,33 @@
     </div>
   </div>
   </router-link>
+   
+
+    <router-link to="/roemisch">
+  <div class="box">
+    Vorrömische Zahlen lesen
+    <img src="@/assets/roman2.png" style="width:86%;height:60%">
+    <div>
+      <img src="@/assets/biber.png" style="height:8%;width:8%;" />
+       <img src="@/assets/biber.png" style="height:8%;width:8%;" />
+    </div>
+  </div>
+  </router-link>
+
+
+  <router-link to="/Hex">
+  <div class="box">
+    hexadezimale Zahlen lesen
+    <img src="@/assets/hexa.png" style="width:50%;height:60%">
+    <div>
+      <img src="@/assets/biber.png" style="height:8%;width:8%;" />
+       <img src="@/assets/biber.png" style="height:8%;width:8%;" />
+    </div>
+  </div>
+  </router-link>
+
+
+  
 
    
 <router-link to="/drei">
@@ -164,16 +170,17 @@ export default {
    background: rgba(43, 33, 33, 0.137);
  }
 
- .box {
+ .box  {
    padding: 50px 0;
-   width: 300px;
+   width: 275px;
    height: auto;
    text-align: center;
    background: rgb(248, 161, 62);
-   margin: 20px;
+   margin: 40px;
+   border-style:solid;
    display: inline-block;
    border-radius: 10px ;
    
-
  }
+ 
 </style>
