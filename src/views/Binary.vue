@@ -25,12 +25,13 @@
 
 
   <div >
-    <h1>Welche Dezimalzahl wird durch folgende binäre Zahl ausgedrückt?</h1>
+    <h2>Binäre Zahlen lesen</h2>
+    <p>Wandle folgende binäre Zahl in ihre Dezimalzahl um</p>
   </div>
 
     <!--<h1>{{val}}</h1>  -->
-  <h1>{{binary}}<h6 style="display:inline;font-size:12px">2</h6></h1>
-<input v-model="result" placeholder="edit me"  />
+  <h3><strong>{{binary}}<h6 style="display:inline;font-size:12px">2</h6></strong></h3> 
+<input class="in" v-model="result" placeholder="Deine Lösung" style="width:10%"  />
 <br><br><br>
 
   
@@ -42,21 +43,31 @@
      </div>
 
 <br><br><br>
-     <div style="display:flex;margin-left:40%;">
-  <button v-on:click="reset" style="margin-left:10px;">
-    <img src="@/assets/reset.png" alt="">
-  </button>
+    
 
-  <button v-on:click="check()" style="margin-left:10px;">
+ <div style="display:flex;margin-left:40%;">
+    <button class="button" v-on:click="check()" style="margin-left:10px;">
+      <img src="@/assets/test.png" style="height:40%;width:auto" alt="">
     <p>Überprüfen</p>
-    <h1 v-if="resultat&&abgabe"> </h1>
- <h1 v-else-if="abgabe"> Nope</h1>
+    
   </button>
 
-    <button  @click="toggleModal" style="margin-left:10px;">
-    <img src="@/assets/help.png" alt="">
-    </button>
-    </div>
+ 
+ 
+
+   <button class="button" v-on:click="reset" style="margin-left:10px;">
+     
+  <img src="@/assets/reset.png" style="height:40%;width:auto" alt="">
+<p>nächste Aufgabe</p>
+  </button>
+
+   
+<button class="button" @click="toggleModal" style="margin-left:10px;">
+    
+      <img src="@/assets/help.png" style="height:43%">
+       <p>Anleitung</p>
+      </button>
+   </div>
  
     
 </template>
@@ -73,7 +84,7 @@ export default {
     return{
     val: Math.floor(Math.random() * 32) + 1,
     binary:0,
-    result:0,
+    result:'',
     resultat:false,
     abgabe:false,
     showModal:false,
@@ -94,7 +105,7 @@ export default {
       this.val=Math.floor(Math.random() * 32) + 1,
       this.binary=(this.val).toString(2),
       this.abgabe=false,
-      this.result=0
+      this.result=''
     },
     check(){
       if(this.val==this.result){
@@ -121,3 +132,21 @@ export default {
 
 
 </script>
+
+<style scoped>
+.button {
+    cursor: pointer;
+   
+    /*background-color: #ffe5b2;*/
+    border-radius: 10px;
+    border: solid black;
+    border-width: thin;
+    
+    
+  }
+  .in{
+    color: black;
+    font-weight: bold;
+    height: 10%;
+  }
+</style>

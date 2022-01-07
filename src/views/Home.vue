@@ -2,7 +2,8 @@
 
  
   <div >
-      <h2>Hallo hier findest du aufgaben zum buch Einfach Informatik 7-8 ZUM KAPITEL DARSTELLUNG VON ZAHLEN </h2>
+      <h1>Einfach Informatik 7-9</h1>
+      <h2>Übungen rund um Zahlendarstellungen </h2>
       <img src="@/assets/start.png" style="height:25%;width:25%;"/>
   </div>
 
@@ -29,7 +30,7 @@
     </div>
     <div>
       <img src="@/assets/biber.png" style="height:8%;width:8%;" />
-      <img src="@/assets/biber.png" style="height:8%;width:8%;" />
+      
     </div>
   </div>
   </router-link>
@@ -50,7 +51,7 @@
 
   <router-link to="/binary">
   <div class="box">
-    Binäre Zahlend interpretieren
+    Binäre Zahlen interpretieren
     <img src="@/assets/reverse.png" style="width:89%;height:60%">
     <div>
       <img src="@/assets/biber.png" style="height:8%;width:8%;" />
@@ -64,7 +65,7 @@
 
    <router-link to="/addBin">
   <div class="box">
-    Binäre Zahlen Addieren
+    Binäre Zahlen addieren
     <img src="@/assets/add.png" style="width:72%;height:60%">
     <div>
       <img src="@/assets/biber.png" style="height:8%;width:8%;" />
@@ -100,10 +101,11 @@
 
   <router-link to="/Hex">
   <div class="box">
-    hexadezimale Zahlen lesen
+    Hexadezimale Zahlen lesen
     <img src="@/assets/hexa.png" style="width:50%;height:60%">
     <div>
       <img src="@/assets/biber.png" style="height:8%;width:8%;" />
+       <img src="@/assets/biber.png" style="height:8%;width:8%;" />
        <img src="@/assets/biber.png" style="height:8%;width:8%;" />
     </div>
   </div>
@@ -115,7 +117,7 @@
    
 <router-link to="/drei">
   <div class="box">
-    3-adische Darstellung lesen
+    3-adische Zahlen lesen
     <img src="@/assets/tri.png" style="width:44%;height:60%">
     <div>
       <img src="@/assets/biber.png" style="height:8%;width:8%;" />
@@ -132,7 +134,7 @@
     <div>
       <img src="@/assets/coinss.png" style="width:50%;"> <br>
       <img src="@/assets/biber.png" style="height:8%;width:8%;" />
-      <img src="@/assets/biber.png" style="height:8%;width:8%;" />
+      
     </div>
   </div>
   </router-link>

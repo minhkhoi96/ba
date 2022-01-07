@@ -23,13 +23,13 @@
 
     <br>
    <div>
-    <span>Gesuchte Zahl ist: {{target}}  &nbsp;&nbsp;  Wert bis jetzt: {{sofar}}      &nbsp;&nbsp;       
+    <span> <strong> Gesuchte Zahl ist: {{target}}</strong>  &nbsp;&nbsp;  Wert bis jetzt: {{sofar}}      &nbsp;&nbsp;       
     <template v-if="(target-sofar==0)"><span style="color:green;" >Restbetrag ist: {{target-sofar}}</span> </template>
     <template v-else> Restbetrag ist: {{target-sofar}} </template>
     </span>
    
 </div>
-<p>Damit du siehst was gerechnet wird, siehst du unten den Rechnungsverlauf:</p>
+<p>Hier siehst Du den Verlauf der Rechnungen:</p>
       <a class=container>
       Rechnungsverlauf: 
       <br>
@@ -89,7 +89,7 @@
     <button  v-on:click="if (target>1){return;}else{}">1</button> -->
      <div v-if="target-sofar==0">
        
-      <p style="color:green">Super du hast nun die Binäre Darstellung von {{target}} herausbekommen: {{target.toString(2)}}</p> 
+      <p style="color:green">Super du hast nun die Binäre Darstellung von <strong>{{target}}</strong> herausbekommen: <strong>{{target.toString(2)}} </strong></p> 
       
     </div>
     <div v-else>
@@ -97,13 +97,14 @@
     </div>
     
     <div style="display:flex;margin-left:40%;">
-    <button  v-on:click="reset" style="margin-left:10px;">
+    <button class="button" v-on:click="reset" style="margin-left:10px;">
   <img src="@/assets/reset.png" style="height:40%;width:auto" alt="">
 <p>nächste Aufgabe</p>
   </button>
-  <button @click="toggleModal" style="margin-left:10px;">
+  <button class="button" @click="toggleModal" style="margin-left:10px;">
     
-      <img src="@/assets/help.png" alt="">
+      <img src="@/assets/help.png" style="width:70%" alt="">
+      <p>Anleitung</p>
       </button>
   
 </div>
@@ -295,7 +296,7 @@ export default {
     min-height: 250px;
     width: 200px;
     border: 1px solid black;
-    margin: 0px 15% 10px 200px;
+    margin: 0px 14% 10px 200px;
 
     background: white;
     
@@ -304,6 +305,17 @@ button{
   margin-left: 10px;
   margin-right: 10px;
 }
+
+ .button {
+    cursor: pointer;
+   
+    /*background-color: #ffe5b2;*/
+    border-radius: 10px;
+    border: solid black;
+    border-width: thin;
+    
+    
+  }
 
 
 </style>

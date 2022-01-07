@@ -20,30 +20,37 @@
       </div>
 
     </div>
-    <h2>Addiere die beiden binäre Zahlen und gib ihre Summe als binäre Zahl</h2>
+    <h2>Binäre Addition</h2>
+    <p class="text" >
+       <img src="@/assets/alice.png" alt="" style="height:5%;width:5%">
+        Kannst du Bob dabei helfen die beiden binären Zahlen schriftlich zu addieren?<br>
+        Falls das Resultat mehr als vier Ziffern benötigen würde, setze einfach einen Tick
+        auf das Überschuss Kästchen!
+      </p>
 
     
  <br><br>
 
   <div class="container" >
+    <br>
     &nbsp;&nbsp;
   <template v-for='i in 4' :key='i' >
-    {{list1[i-1]}}&nbsp;
+    <strong class="zahl">{{list1[i-1]}} </strong>&nbsp;
   </template>
   
   <br>
   +
   <template v-for='i in 4' :key='i'  >
-    {{list2[i-1]}}&nbsp;
+    <strong class="zahl">{{list2[i-1]}}</strong>&nbsp;
   </template>
   <hr style="height:1px;width:80px;background-color:black;">
     &nbsp;&nbsp;
  
 
- <input v-model="msg0" placeholder="" style="width:7px;margin-right:05px">
- <input v-model="msg1" placeholder="" style="width:7px;margin-right:5px">
- <input v-model="msg2" placeholder="" style="width:7px;margin-right:5px">
- <input v-model="msg3" placeholder="" style="width:7px;margin-right:5px">
+ <input class="in" v-model="msg0" placeholder="" style="width:7px;margin-right:05px">
+ <input class="in" v-model="msg1" placeholder="" style="width:7px;margin-right:5px">
+ <input class="in" v-model="msg2" placeholder="" style="width:7px;margin-right:5px">
+ <input class="in" v-model="msg3" placeholder="" style="width:7px;margin-right:5px">
 
 <br><br>
 <input type="checkbox" id="checkbox" v-model="checked">
@@ -51,24 +58,32 @@
 <br>
 
   </div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <!--{{l0+l1+l2+l3}}-->
 
-  <div style="display:flex;margin-left:40%;">
-    <button v-on:click="reset" style="margin-left:10px;">
-    <img src="@/assets/reset.png" style="height:40%;width:auto" alt="">
-    <p>nächste Aufgabe</p>
-  </button>
-
-<button v-on:click="check" style="margin-left:10px;">
+ <div style="display:flex;margin-left:39%;">
+    <button class="button" v-on:click="check()" style="margin-left:10px;">
+      <img src="@/assets/test.png" style="height:40%;width:auto" alt="">
     <p>Überprüfen</p>
-   
+    
   </button>
 
-  <button @click="toggleModal" style="margin-left:10px;">
-    <img src="@/assets/help.png" alt="">
-    </button>
-  </div>
+ 
+ 
+
+   <button class="button" v-on:click="reset" style="margin-left:10px;">
+     
+  <img src="@/assets/reset.png" style="height:40%;width:auto" alt="">
+<p>nächste Aufgabe</p>
+  </button>
+
+   
+<button class="button" @click="toggleModal" style="margin-left:10px;">
+    
+      <img src="@/assets/help.png" style="height:43%">
+       <p>Anleitung</p>
+      </button>
+   </div>
   
 </template>
 
@@ -269,7 +284,38 @@ export default {
 .container{
   background-color: white;
   margin: auto;
-  width: 150px;
-  height: auto;
+  width: 200px;
+  height: 175px;
+  border-radius: 10px;
+  border: solid black;
+    
 }
+.button {
+    cursor: pointer;
+   
+    /*background-color: #ffe5b2;*/
+    border-radius: 10px;
+    border: solid black;
+    border-width: thin;
+    
+    
+  }
+  .in{
+    color: black;
+    font-weight: bold;
+    height: 10%;
+  }
+  .zahl{
+    color:black;
+    
+  }
+  .text {
+     border-radius: 10px;
+    border: solid black; 
+    background-color:white ;
+    margin-left:20%;
+    margin-right: 20%;
+    
+  }
+ 
 </style>

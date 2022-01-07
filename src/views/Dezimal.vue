@@ -21,12 +21,13 @@
       </div>
     </div>
   
-    <h1>Wandle folgende Zahlen in ihre Binäre Darstellung um</h1>
+    <h2>Dezimal zu Binär</h2>
+    <p>Wandle folgende Zahlen in ihre binäre Stellendarstellung um</p>
 
-    <h1> {{dec}} </h1>
     
+     <h3><strong>{{dec}}</strong></h3>
     
-    <input v-model="result" placeholder="Deine Lösung"  />
+    <input v-model="result" placeholder="Deine Lösung" style="width:10%"  />
 
 <br>
     <p>Als Hilfe hast du hier eine Tabelle mit den Zweierpotenzen </p>
@@ -35,7 +36,7 @@
     <br><br>
 
 
- <div style="display:flex;margin-left:40%;">
+  <div style="display:flex;margin-left:40%;">
     <button class="button" v-on:click="check()" style="margin-left:10px;">
       <img src="@/assets/test.png" style="height:40%;width:auto" alt="">
     <p>Überprüfen</p>
@@ -54,7 +55,7 @@
    
 <button class="button" @click="toggleModal" style="margin-left:10px;">
     
-      <img src="@/assets/help.png" alt="">
+      <img src="@/assets/help.png" style="height:43%">
        <p>Anleitung</p>
       </button>
    </div>

@@ -26,12 +26,12 @@
     <p class="text" >
         <img src="@/assets/alice.png" alt="" style="height:5%;width:5%">
         Alice hat heute in der Schule die dezimale Kartendarstellung gelernt
-        und möchte dies zu Hause mit ihren Karten üben.
+        und möchte dies zu Hause mit ihren Karten üben. <br>
         Dazu hat sie zwei Zahlen in die Kartendarstellung gebracht.
         Um diese zu addieren tut sie zuerst alle Karten zusammen.
         Im zweiten Schritt tauscht sie nun ihre Karten so lange aus, bis Sie
         am Schluss die korrekte Kartendarstellung für die Summe hat.
-        Kannst du ihr beim umtauschen helfen?
+        Kannst du ihr beim Umtauschen helfen?
     </p>
 
     <p style="display:flex;;flex-direction: column;float:left;row-gap:10px;margin-left:500px;margin-right:10px">

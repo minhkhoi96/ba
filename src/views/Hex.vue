@@ -22,34 +22,43 @@
     </div>
 
     
-    <h1>Welche Dezimalzahl wird durch folgende hexadezimalzahl dargestellt?</h1>
-    <p>(lösung ist:{{lösung}})</p>
-    <h1>{{hex}}<h6 style="display:inline;font-size:12px">16</h6></h1>
+    <h2>Hexadezimale Zahlen lesen</h2>
+    <!--<p>(lösung ist:{{lösung}})</p>-->
+    <p>Wandle folgende hexidezimale Zahl in ihre Dezimalzahl um</p>
+    <h3><strong>{{hex}}<h6 style="display:inline;font-size:12px">16</h6></strong></h3>
 
-    <input v-model="result" placeholder="Gib Hier deine Lösung ein" />
+    <input class="in" v-model="result" placeholder="Deine Lösung" />
 
     <br>
     <p>Als Hilfe hast du hier eine Tabelle mit den Hexadezimalzahlen </p>
 
     <img src="@/assets/hex.png" alt="">
     <br><br>
-    <div style="display:flex;margin-left:40%;">
-      <button v-on:click="reset"  style="margin-left:10px;">
-      <img src="@/assets/reset.png" style="height:40%;width:auto" alt="">
-      <p>nächste Aufgabe</p>
-    </button>
     
-    <button v-on:click="check()"  style="margin-left:10px;">
+
+     <div style="display:flex;margin-left:40%;">
+    <button class="button" v-on:click="check()" style="margin-left:10px;">
+      <img src="@/assets/test.png" style="height:40%;width:auto" alt="">
     <p>Überprüfen</p>
     
-    </button>
+  </button>
 
-    <button @click="toggleModal"  style="margin-left:10px;">
-    <img src="@/assets/help.png" alt="">
-    </button>
+ 
+ 
+
+   <button class="button" v-on:click="reset" style="margin-left:10px;">
+     
+  <img src="@/assets/reset.png" style="height:40%;width:auto" alt="">
+<p>nächste Aufgabe</p>
+  </button>
+
+   
+<button class="button" @click="toggleModal" style="margin-left:10px;">
     
-    </div>
-    
+      <img src="@/assets/help.png" style="height:43%">
+       <p>Anleitung</p>
+      </button>
+   </div>
   
     
   
@@ -136,4 +145,20 @@ export default {
     background: white;
     
 }
+
+.button {
+    cursor: pointer;
+   
+    /*background-color: #ffe5b2;*/
+    border-radius: 10px;
+    border: solid black;
+    border-width: thin;
+    
+  }
+  .in{
+    color: black;
+    font-weight: bold;
+    width: 10%;
+  }
+  
 </style>

@@ -43,26 +43,29 @@
    <img src="@/assets/roemisch.png" style="display:inline-block"> 
   </div>
 
-<div style="display:flex;margin-left:40%;">
-  <button v-on:click="reset">
-    <img src="@/assets/reset.png" alt="">
-    </button>
+ <div style="display:flex;margin-left:40%;">
+    <button class="button" v-on:click="check()" style="margin-left:10px;">
+      <img src="@/assets/test.png" style="height:40%;width:auto" alt="">
+    <p>Überprüfen</p>
+    
+  </button>
+
+ 
+ 
+
+   <button class="button" v-on:click="reset" style="margin-left:10px;">
      
+  <img src="@/assets/reset.png" style="height:40%;width:auto" alt="">
+<p>nächste Aufgabe</p>
+  </button>
 
-    <button v-on:click="check" style="margin-left:10px;">
-        <p>Überprüfen</p>
-        <div v-if="resultat&&abgabe"> 
-         
-        </div>
-        <div v-else-if="abgabe">
-           
-        </div>
-   </button>
-
-   <button @click="toggleModal" style="margin-left:10px;">
-    <h1>BEISPIEL</h1>
-    </button>
-    </div>
+   
+<button class="button" @click="toggleModal" style="margin-left:10px;">
+    
+      <img src="@/assets/help.png" style="height:43%">
+       <p>Anleitung</p>
+      </button>
+   </div>
   
 
   
@@ -218,4 +221,14 @@ export default {
     background: white;
     
 }
+
+.button {
+    cursor: pointer;
+   
+    /*background-color: #ffe5b2;*/
+    border-radius: 10px;
+    border: solid black;
+    border-width: thin;
+    
+  }
 </style>

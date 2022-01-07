@@ -20,21 +20,26 @@
 
       </div>
 
+      
+
 </div>
+<h2>3-adische Zahlen lesen</h2>
     <p>Die folgende Zahl ist in 3-adischer Darstellung.
       Kannst du sie als Dezimalzahl ausdrücken?
     </p>
     
-      <h1>{{binary}}<h6 style="display:inline;font-size:12px">3</h6> </h1>
+      <h3><strong>{{binary}}<h6 style="display:inline;font-size:12px">3</h6></strong> </h3>
      <!-- <h1>(lösung ist: {{val}})</h1> -->
+     <input class="in" v-model="result" placeholder="Deine Lösung" style="width:8%"/>
+     <br>
      <p>Als Unterstützung hast du hier eine Tabelle mit den Dreierpotenzen:</p>
       <br>
      <img src="@/assets/drei.png" alt="">
      <br> <br> <br> <br> <br>
-<input v-model="result" placeholder="Deine Lösung" />
+
 
 <br><br><br><br>
- <div style="display:flex;margin-left:40%;">
+  <div style="display:flex;margin-left:40%;">
     <button class="button" v-on:click="check()" style="margin-left:10px;">
       <img src="@/assets/test.png" style="height:40%;width:auto" alt="">
     <p>Überprüfen</p>
@@ -53,7 +58,7 @@
    
 <button class="button" @click="toggleModal" style="margin-left:10px;">
     
-      <img src="@/assets/help.png" alt="">
+      <img src="@/assets/help.png" style="height:43%">
        <p>Anleitung</p>
       </button>
    </div>
@@ -125,6 +130,11 @@ methods: {
     border: solid black;
     border-width: thin;
     
+  }
+  .in{
+    color: black;
+    font-weight: bold;
+    width: 10%;
   }
 </style>
 

@@ -27,7 +27,7 @@
       </div>
 
     </div>
-    <h2>Stelle die folgende Zahl mit den unteren Karten dar:</h2>
+    <h2>Stelle die folgende Zahl mit Karten dar</h2>
    
   
  
