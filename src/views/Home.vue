@@ -132,7 +132,8 @@
   <div class="box" >
     Münzen tauschen
     <div>
-      <img src="@/assets/coinss.png" style="width:50%;"> <br>
+      <img src="@/assets/munz.png" style="width:44%;">
+     <!-- <img src="@/assets/coinss.png" style="width:50%;"> --><br>
       <img src="@/assets/biber.png" style="height:8%;width:8%;" />
       
     </div>

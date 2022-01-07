@@ -23,7 +23,7 @@
     <h2>Binäre Addition</h2>
     <p class="text" >
        <img src="@/assets/alice.png" alt="" style="height:5%;width:5%">
-        Kannst du Bob dabei helfen die beiden binären Zahlen schriftlich zu addieren?<br>
+        Hilf Alice dabei helfen die beiden binären Zahlen schriftlich zu addieren?<br>
         Falls das Resultat mehr als vier Ziffern benötigen würde, setze einfach einen Tick
         auf das Überschuss Kästchen!
       </p>

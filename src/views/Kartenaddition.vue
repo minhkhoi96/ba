@@ -9,7 +9,25 @@
     </div>
 
       <div v-if="showModal1">
-      <div v-if="state">
+        <div v-if="(num1!=sum1)">
+        <Modal1 header="dein erster Summand stimmt noch nicht" @close="showModal1=false" style="color:red">
+        
+        </Modal1>
+       </div>
+
+        <div v-else-if="(num2!=sum2)">
+        <Modal1 header="dein zweiter Summand stimmt noch nicht" @close="showModal1=false" style="color:red">
+        
+        </Modal1>
+       </div>
+
+       <div v-else-if="(num3!=s1sum)">
+        <Modal1 header="deine Summe stimmt noch nicht" @close="showModal1=false" style="color:red">
+        
+        </Modal1>
+       </div>
+
+      <div v-else-if="state">
         <Modal1 header="SUPER!" @close="showModal1=false" style="color:green">
         <img src="@/assets/alice.png" alt="" style="height:25%;width:25%">
         </Modal1>
@@ -27,16 +45,17 @@
         <img src="@/assets/alice.png" alt="" style="height:5%;width:5%">
         Alice hat heute in der Schule die dezimale Kartendarstellung gelernt
         und möchte dies zu Hause mit ihren Karten üben. <br>
-        Dazu hat sie zwei Zahlen in die Kartendarstellung gebracht.
-        Um diese zu addieren tut sie zuerst alle Karten zusammen.
+        Dazu hat sie zwei Zahlen in Kartendarstellung dargestellt.
+        Um diese zu addieren tut sie zuerst alle Karten zusammen. <br>
         Im zweiten Schritt tauscht sie nun ihre Karten so lange aus, bis Sie
         am Schluss die korrekte Kartendarstellung für die Summe hat.
-        Kannst du ihr beim Umtauschen helfen?
+        Deine Aufgabe ist es herauszufinden, welche zwei Summanden Alice benutzt und ihre Summe nach dem
+        Kombinieren anzugeben. Anschliessend tausche die Karten so lange aus, bis wir die korrekte Kartendarstellung haben.
     </p>
-
+<br>
     <p style="display:flex;;flex-direction: column;float:left;row-gap:10px;margin-left:500px;margin-right:10px">
-        
-    {{sum1}}:
+      <span><strong><input v-model="num1" placeholder="" style="width:20%"  />:</strong></span>
+    <!--{{sum1}}:-->
     </p>
     <div style="display:flex;flex-direction:row">
     
@@ -81,7 +100,8 @@
     <div style="display:flex;flex-direction:row">
     
     <p style="display:flex;flex-direction: column;float:left;row-gap:10px;margin-left:500px;margin-right:10px">
-    {{sum2}}:
+        <span><strong><input v-model="num2" placeholder="" style="width:20%;"  />:</strong></span>
+    <!--{{sum2}}:-->
     </p>
 
     <div style="display:flex;flex-direction: column;float:left;row-gap:10px;margin-left:10px;margin-right:10px">
@@ -123,8 +143,8 @@
     <div style="display:flex;flex-direction:row">
     
   <p style="display:flex;flex-direction: column;float:left;row-gap:10px;margin-left:490px;margin-right:10px">
-      
-    {{s1sum}}:
+      <span><strong><input v-model="num3" placeholder="" style="width:20%"  />:</strong></span>
+    <!--{{s1sum}}:-->
     </p>
 
     <div style="display:flex;;flex-direction: column;float:left;row-gap:10px;margin-left:17px;margin-right:10px">
@@ -177,9 +197,8 @@
    </div>
 
     </div>
-    <p>Dies ist aber noch nicht die richtige Kartendarstellung
-       denn wir haben von einigen Karten mehr als 9 Stück. Kannst du Alice helfen
-       die richtige Kartendarstellung durch umtauschen zu finden? 
+    <p> Die richtige Kartendarstellung haben wir, wenn von jeder Sorte nicht mehr als neun Stück übrig sind.
+        
     </p>
 
     <div style="display:flex;margin-left:10%;">
@@ -212,7 +231,7 @@
    </div>
 
      
-    <div style="display:flex;margin-left:38%;">
+    <div style="display:flex;margin-left:40%;">
     <button class="button" v-on:click="check()" style="margin-left:10px;">
       <img src="@/assets/test.png" style="height:40%;width:auto" alt="">
     <p>Überprüfen</p>
@@ -285,7 +304,10 @@ export default {
             fehlermeldung:false,
             showModal:false,
             showModal1:false,
-            state:false
+            state:false,
+            num1:'',
+            num2:'',
+            num3:''
 
             
             
@@ -330,7 +352,10 @@ export default {
             this.h2=this.random(3,10),
             this.z2=this.random(3,10),
             this.e2=this.random(3,10),
-            this.fehlermeldung=false;
+            this.fehlermeldung=false,
+            this.num1=''
+            this.num2=''
+            this.num3=''
             this.init()
         },
         toggleModal(){
