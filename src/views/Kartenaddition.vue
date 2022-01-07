@@ -42,7 +42,7 @@
 
     </div>
     <p class="text" >
-        <img src="@/assets/alice.png" alt="" style="height:5%;width:5%">
+        <img src="@/assets/alice.png" alt="" style="display:flex;flex-direction: column;margin-left:48%;height:5%;width:5%">
         Alice hat heute in der Schule die dezimale Kartendarstellung gelernt
         und möchte dies zu Hause mit ihren Karten üben. <br>
         Dazu hat sie zwei Zahlen in Kartendarstellung dargestellt.
@@ -53,7 +53,7 @@
         Kombinieren anzugeben. Anschliessend tausche die Karten so lange aus, bis wir die korrekte Kartendarstellung haben.
     </p>
 <br>
-    <p style="display:flex;;flex-direction: column;float:left;row-gap:10px;margin-left:500px;margin-right:10px">
+    <p style="display:flex;flex-direction: column;float:left;row-gap:10px;margin-left:500px;margin-right:10px">
       <span><strong><input v-model="num1" placeholder="" style="width:20%"  />:</strong></span>
     <!--{{sum1}}:-->
     </p>

@@ -1,5 +1,7 @@
 <template>
-    <p>Alice hat folgende Münzen in Ihrer Brieftasche.
+    <p class="text">
+      <img src="@/assets/alice.png" alt="" style="display:flex;flex-direction: column;margin-left:48%;height:4%;width:4%">
+        Alice hat folgende Münzen in Ihrer Brieftasche.
         Weil die Tasche ihr zu schwer wird möchte sie gerne
         weniger Münzen mit sich herumschleppen aber trotzdem noch gleich
         viel Geld dabei haben. Zum Glück besitzt sie eine Geldmaschine,
@@ -267,6 +269,11 @@ export default {
     border: 1px dashed black;
     margin: 1em 1em 1em 1em;
     background: white;
+  }
+   .text {
+     border-radius: 10px;
+    border: solid black; 
+    background-color:white ;
   }
 
   img {

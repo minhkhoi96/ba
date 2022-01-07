@@ -69,8 +69,8 @@
    <!--<p>rest ist {{pre}}</p>
     <h1>LISTE {{list}}</h1>-->
    
-     
-     <a class="square"> &nbsp; {{seven}} </a> 
+     &nbsp;&nbsp;&nbsp;&nbsp;
+     <a class="square"> &nbsp;&nbsp; {{seven}} </a>
      <a class="square"> &nbsp; {{six}} </a> 
      <a class="square"> &nbsp; {{five}}  </a> 
      <a class="square"> &nbsp; {{four}}  </a> 
@@ -280,7 +280,7 @@ export default {
   width: 20px;
   background-color: white;
   
-  margin-left: 10px;
+  margin-left: 13px;
   margin-right: 10px;
 }
 .sup {
