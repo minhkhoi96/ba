@@ -51,7 +51,7 @@
 
   <router-link to="/binary">
   <div class="box">
-    Binäre Zahlen interpretieren
+    Binäre Zahlen lesen
     <img src="@/assets/reverse.png" style="width:89%;height:60%">
     <div>
       <img src="@/assets/biber.png" style="height:8%;width:8%;" />

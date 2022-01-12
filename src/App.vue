@@ -1,6 +1,10 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
+    <router-link to="/">
+    <button style="width:6%;border-radius:10px;display:flex;">
+    <img src="@/assets/homepage.png"  />
+    </button>
+    </router-link> 
  
    
     

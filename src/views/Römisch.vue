@@ -29,12 +29,12 @@
 
     
     
-  
-    <h1>welche Dezimalzahl wird durch diese vorrömische Zahl dargestellt?</h1>
+  <h1>Vorrömische Zahlen lesen</h1>
+    <h2>welche Dezimalzahl wird durch diese vorrömische Zahl dargestellt?</h2>
 
    
 
-    <h1> {{roman}} </h1>
+    <h2> {{roman}} </h2>
     
 <input v-model="result" placeholder="Deine Lösung" />
 <!--<h1> (lösung ist: {{lösung}}) </h1>-->
