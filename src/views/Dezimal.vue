@@ -1,31 +1,33 @@
 <template>
 <div v-if="showModal">
     <Modal header="" @close="toggleModal">
-   
+      Diese Aufgabe ist eine Erweiterung zur Aufgabe "Binäre Stellendarstellung" nur ohne Hilfsrechner,
+      hier musst du also Kopfrechnen!
+
     </Modal>
 
 </div>
 <div v-if="showModal1">
       <div v-if="state">
-        <Modal1 header="richtig" @close="showModal1=false" style="color:green">
-        
+        <Modal1 header="Super!" @close="showModal1=false" style="color:green">
+         <img src="@/assets/right.png" alt="">
         </Modal1>
       </div>
     
 
       <div v-else>
-        <Modal1 header="falsch" @close="showModal1=false" style="color:red">
-        
+        <Modal1 header="Das stimmt noch nicht ganz" @close="showModal1=false" style="color:red">
+        <img src="@/assets/wrong.png" alt="">
         </Modal1>
 
       </div>
     </div>
   
-    <h2>Dezimal zu Binär</h2>
-    <p>Wandle folgende Zahlen in ihre binäre Stellendarstellung um</p>
+    <h1>Dezimalzahl in Binärzahl umwandeln</h1>
+    <h2>Wandle folgende Zahlen in ihre binäre Stellendarstellung um</h2>
 
     
-     <h3><strong>{{dec}}</strong></h3>
+     <h2><strong>{{dec}}</strong></h2>
     
     <input v-model="result" placeholder="Deine Lösung" style="width:10%"  />
 
@@ -33,7 +35,7 @@
     <p>Als Hilfe hast du hier eine Tabelle mit den Zweierpotenzen </p>
 
     <img src="@/assets/potenz.png" alt="">
-    <br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
   <div style="display:flex;margin-left:40%;">

@@ -1,22 +1,26 @@
 <template>
 
 <div v-if="showModal">
-    <Modal header="Hier kommt ein Beispiel vorgelöst" @close="toggleModal">
-    
+    <Modal header="" @close="toggleModal">
+    Zähle wie oft jedes Symbol vorkommt, ersetze das Symbol dann durch ihren Wert in der Tabelle und addiere die Werte zusammen.
+    Zum Beispiel ist MDLXXVI = <br>
+    1 x 1000 + 1 x 500 + 1 x 50 + 2 x 20 + 1 x 5 + 1 x 1 =
+    1000 + 500 + 50 + 20 + 5 + 1  = <br>
+    1576
     </Modal>
 
 </div>
 
 <div v-if="showModal1">
       <div v-if="state">
-        <Modal1 header="richtig" @close="showModal1=false" style="color:green">
-        
+        <Modal1 header="Super!" @close="showModal1=false" style="color:green">
+        <img src="@/assets/right.png" alt="">
         </Modal1>
       </div>
 
       <div v-else>
-        <Modal1 header="falsch" @close="showModal1=false" style="color:red">
-        
+        <Modal1 header="Das stimmt noch nicht ganz" @close="showModal1=false" style="color:red">
+        <img src="@/assets/wrong.png" alt="">
         </Modal1>
 
       </div>
@@ -26,13 +30,13 @@
     
     
   
-    <h1>welche Dezimalzahl wird durch diese Vorrömische Zahl dargestellt?</h1>
+    <h1>welche Dezimalzahl wird durch diese vorrömische Zahl dargestellt?</h1>
 
    
 
     <h1> {{roman}} </h1>
     
-<input v-model="result" placeholder="" />
+<input v-model="result" placeholder="Deine Lösung" />
 <!--<h1> (lösung ist: {{lösung}}) </h1>-->
 <br>
 
@@ -42,7 +46,7 @@
     <p>Zur Hilfe siehst du hier eine Tabelle mit den römischen Zahlen</p>
    <img src="@/assets/roemisch.png" style="display:inline-block"> 
   </div>
-
+<br><br><br><br><br><br><br><br><br><br><br><br>
  <div style="display:flex;margin-left:40%;">
     <button class="button" v-on:click="check()" style="margin-left:10px;">
       <img src="@/assets/test.png" style="height:40%;width:auto" alt="">

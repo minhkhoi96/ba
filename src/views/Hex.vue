@@ -1,20 +1,29 @@
 <template>
     <div v-if="showModal">
-    <Modal header="Hier kommt eine Beispielaufgabe" @close="toggleModal">
-    
+    <Modal header="" @close="toggleModal">
+    Bei hexadeziale Zahlen steht jede Stelle für eine sechzehner Potenz, also
+     <var>16<sup>0</sup></var> = 1, <var>16<sup>1</sup></var> = 16, <var>16<sup>2</sup></var> = 256 und so weiter.
+     Ausserdem gibt sie an wie oft diese Potenz vorhanden ist. <br>
+     Zum Beispiel lässt sich <strong>8F0<h6 style="display:inline;font-size:9px">16</h6></strong> wie folgt berechnen: <br>
+     8 x <var>16<sup>2</sup></var> + F x <var>16<sup>1</sup></var> + 0 x <var>16<sup>0</sup></var> =<br>
+     8 x <var>16<sup>2</sup></var> + 15 x <var>16<sup>1</sup></var> + 0 x <var>16<sup>0</sup></var> = <br>
+     8 x 256 + 15 x 16 + 0 = <br>
+     2048 + 240 = <br>
+     2288
+     
     </Modal>
     </div>
 
      <div v-if="showModal1">
       <div v-if="state">
-        <Modal1 header="richtig" @close="showModal1=false" style="color:green">
-        
+        <Modal1 header="Super!" @close="showModal1=false" style="color:green">
+        <img src="@/assets/right.png" alt="">
         </Modal1>
       </div>
 
       <div v-else>
-        <Modal1 header="falsch" @close="showModal1=false" style="color:red">
-        
+        <Modal1 header="Das stimmt noch nicht ganz" @close="showModal1=false" style="color:red">
+        <img src="@/assets/wrong.png" alt="">
         </Modal1>
 
       </div>
@@ -22,10 +31,10 @@
     </div>
 
     
-    <h2>Hexadezimale Zahlen lesen</h2>
+    <h1>Hexadezimale Zahlen lesen</h1>
     <!--<p>(lösung ist:{{lösung}})</p>-->
-    <p>Wandle folgende hexidezimale Zahl in ihre Dezimalzahl um</p>
-    <h3><strong>{{hex}}<h6 style="display:inline;font-size:12px">16</h6></strong></h3>
+    <h2>Wandle folgende hexadezimale Zahl in ihre Dezimaldarstellung um</h2>
+    <h2><strong>{{hex}}<h6 style="display:inline;font-size:12px">16</h6></strong></h2>
 
     <input class="in" v-model="result" placeholder="Deine Lösung" />
 
@@ -33,7 +42,7 @@
     <p>Als Hilfe hast du hier eine Tabelle mit den Hexadezimalzahlen </p>
 
     <img src="@/assets/hex.png" alt="">
-    <br><br>
+    <br><br><br><br><br><br><br><br><br><br>
     
 
      <div style="display:flex;margin-left:40%;">

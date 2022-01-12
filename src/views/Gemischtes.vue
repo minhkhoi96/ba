@@ -1,21 +1,28 @@
 <template>
  <div v-if="showModal">
     <Modal header="" @close="toggleModal">
-    <p>Hier kommt Beispiellösung
-    </p>
+     Bei 3-adischen Zahlen steht jede Stelle für eine dreier Potenz, also
+     <var>3<sup>0</sup></var> = 1, <var>3<sup>1</sup></var> = 3, <var>3<sup>2</sup></var> = 9 und so weiter.
+     Ausserdem gibt sie an wie oft diese Potenz vorhanden ist. <br>
+     Zum Beispiel lässt sich <strong>122<h6 style="display:inline;font-size:9px">3</h6></strong> wie folgt berechnen: <br>
+    <strong>1</strong>  x <var>3<sup>2</sup></var> + <strong>2</strong>  x <var>3<sup>1</sup></var> + <strong>2</strong>  x <var>3<sup>0</sup></var> = <br>
+     <strong>1</strong>  x 9 + <strong>2</strong>  x 3 + <strong>2</strong>  x 1 = <br>
+     9 + 6 + 2 = <br>
+     17
+
     </Modal>
 
 </div>
 <div v-if="showModal1">
       <div v-if="state">
-        <Modal1 header="richtig" @close="showModal1=false" style="color:green">
-        
+        <Modal1 header="Super!" @close="showModal1=false" style="color:green">
+        <img src="@/assets/right.png" alt="">
         </Modal1>
       </div>
 
       <div v-else>
-        <Modal1 header="falsch" @close="showModal1=false" style="color:red">
-        
+        <Modal1 header="Das stimmt noch nicht ganz" @close="showModal1=false" style="color:red">
+        <img src="@/assets/wrong.png" alt="">
         </Modal1>
 
       </div>
@@ -23,12 +30,12 @@
       
 
 </div>
-<h2>3-adische Zahlen lesen</h2>
-    <p>Die folgende Zahl ist in 3-adischer Darstellung.
-      Kannst du sie als Dezimalzahl ausdrücken?
-    </p>
+<h1>3-adische Zahlen lesen</h1>
+    <h2>Die folgende Zahl ist in 3-adischer Stellendarstellung.
+      Drücke sie als Dezimalzahl aus.
+    </h2>
     
-      <h3><strong>{{binary}}<h6 style="display:inline;font-size:12px">3</h6></strong> </h3>
+      <h2><strong>{{binary}}<h6 style="display:inline;font-size:12px">3</h6></strong> </h2>
      <!-- <h1>(lösung ist: {{val}})</h1> -->
      <input class="in" v-model="result" placeholder="Deine Lösung" style="width:8%"/>
      <br>

@@ -2,34 +2,35 @@
 
     <div v-if="showModal">
     <Modal header="" @close="toggleModal">
-    <p style="text-align: center;margin-left:20%;margin-right:20%">Wir wollen Zahlen in dezimaler Zahlendarstellung in die binäre Darstellung mit dem
-        Greedy Verfahren umwandeln. 
-        Dazu überlegen wir uns für eine gegebene Zahl, zum Beispiel 200, welche die grösste
-        Zweierpotenz ist, die in 200 reinpasst also 128 = 2^7 und rechnen 200-128 = 72.
-        Nun ist die grösste 2er Potenz die in 72 reinpasst 64 = 2^6. Wir rechnen 72-64 = 8.
-        Die nächsten Münzen 32 = 2^5 und 16 = 2^4 passen nicht in die 8 rein aber wir sehen,
-        dass 8 = 2^3 also können wir den Restbetrag vollständig mit der 8er Münze abdecken
-        und erhalten 11001000
+    <p >
+        Wir überlegen uns für eine gegebene Zahl, zum Beispiel 200, welche die grösste
+        Zweierpotenz ist, die in 200 reinpasst also 128 = <var>2<sup>7</sup></var> und rechnen 200-128 = 72.
+        Nun ist die grösste 2er Potenz die in 72 reinpasst 64 = <var>2<sup>6</sup></var>. Wir rechnen 72-64 = 8.
+        Die nächsten Münzen 32 = <var>2<sup>5</sup></var> und 16 = <var>2<sup>4</sup></var> passen nicht in die 8 rein aber wir sehen,
+        dass 8 = <var>2<sup>3</sup></var> also können wir den Restbetrag vollständig mit der 8er Karte abdecken
+        und erhalten 11001000.
+        
     </p>
-   (<i>a</i> + <i>b</i> + √<i>c</i>)<span class=sup>2<i>x</i> + <i>b</i></span>
+   
+   <video src="@/assets/greed.mp4" id="video-container" style="width:70%;height:auto" controls></video>
     </Modal>
     </div>
 
    
 
     
+<h1>Binäre Stellendarstellung</h1>
+     <br>
 
-     
-
-    <br>
+    
    <div>
-    <span> <strong> Gesuchte Zahl ist: {{target}}</strong>  &nbsp;&nbsp;  Wert bis jetzt: {{sofar}}      &nbsp;&nbsp;       
+    <span> <h2> <strong>Gesuchte Zahl ist: {{target}}</strong>  &nbsp;&nbsp;  Wert bis jetzt: {{sofar}}      &nbsp;&nbsp;       
     <template v-if="(target-sofar==0)"><span style="color:green;" >Restbetrag ist: {{target-sofar}}</span> </template>
-    <template v-else> Restbetrag ist: {{target-sofar}} </template>
+    <template v-else> Restbetrag ist: {{target-sofar}} </template></h2>
     </span>
    
 </div>
-<p>Hier siehst Du den Verlauf der Rechnungen:</p>
+
       <a class=container>
       Rechnungsverlauf: 
       <br>
@@ -53,31 +54,59 @@
    
   
     
-   <p>ZweierPotenz</p> 
-   <button  v-on:click="better=false;tooBig=false; clickhandler(128,7);">128</button>
-    <button  v-on:click="better=false;tooBig=false; clickhandler(64,6);">64</button>
-    <button  v-on:click="better=false;tooBig=false; clickhandler(32,5);">32</button>
-    <button  v-on:click="better=false;tooBig=false; clickhandler(16,4);">16</button>
-    <button  v-on:click="better=false;tooBig=false; clickhandler(8,3);">8</button>
-    <button  v-on:click="better=false;tooBig=false; clickhandler(4,2);">4</button>
-    <button  v-on:click="better=false;tooBig=false; clickhandler(2,1);">2</button>
-     <button  v-on:click="better=false;tooBig=false; clickhandler(1,0);">1</button>
+   <div style=" margin-left:34%;margin-right:auto">
 
+   <div style="display:flex;flex-direction:column;float:left;row-gap:1px">
+   <button  v-on:click="better=false;tooBig=false; clickhandler(128,7);"><strong>128 </strong></button>
+   <a class="square" style="width:38px;margin-left:10px"> <strong> {{seven}} </strong></a>
+  </div>
 
-    <p>Binäre Darstellung:</p>
+    <div style="display:flex;flex-direction:column;float:left;row-gap:1px">
+    <button  v-on:click="better=false;tooBig=false; clickhandler(64,6);"><strong>64 </strong></button>
+    <a class="square" style="width:37px;margin-left:10px"> <strong> {{six}} </strong> </a> 
+    </div>
+
+    <div style="display:flex;flex-direction:column;float:left;row-gap:1px">
+    <button  v-on:click="better=false;tooBig=false; clickhandler(32,5);"><strong>32 </strong></button>
+    <a class="square" style="width:37px;margin-left:10px"> <strong> {{five}} </strong>  </a> 
+    </div>
+
+    <div style="display:flex;flex-direction:column;float:left;row-gap:1px">
+    <button  v-on:click="better=false;tooBig=false; clickhandler(16,4);"><strong>16 </strong></button>
+    <a class="square" style="width:37px;margin-left:10px"> <strong>{{four}}  </strong> </a> 
+    </div>
+
+    <div style="display:flex;flex-direction:column;float:left;row-gap:1px">
+    <button  v-on:click="better=false;tooBig=false; clickhandler(8,3);"><strong>8 </strong></button>
+    <a class="square" style="width:37px;margin-left:10px"><strong> {{three}}  </strong> </a>
+    </div>
+
+    <div style="display:flex;flex-direction:column;float:left;row-gap:1px">
+    <button  v-on:click="better=false;tooBig=false; clickhandler(4,2);"><strong>4 </strong></button>
+    <a class="square" style="width:37px;margin-left:10px"> <strong> {{two}}  </strong> </a> 
+    </div>
+
+    <div style="display:flex;flex-direction:column;float:left;row-gap:1px">
+    <button  v-on:click="better=false;tooBig=false; clickhandler(2,1);"><strong>2 </strong></button>
+    <a class="square" style="width:37px;margin-left:10px"><strong> {{one}}  </strong> </a>
+    </div>
+
+    <div style="display:flex;flex-direction:column;float:left;row-gap:1px">
+     <button  v-on:click="better=false;tooBig=false; clickhandler(1,0);"><strong>1 </strong></button>
+     <a class="square" style="width:37px;margin-left:10px"> <strong> {{zero}}  </strong> </a>  
+    </div>
+    </div>
+
+    <br>
 
    <!--<p>rest ist {{pre}}</p>
     <h1>LISTE {{list}}</h1>-->
    
      &nbsp;&nbsp;&nbsp;&nbsp;
-     <a class="square"> &nbsp;&nbsp; {{seven}} </a>
-     <a class="square"> &nbsp; {{six}} </a> 
-     <a class="square"> &nbsp; {{five}}  </a> 
-     <a class="square"> &nbsp; {{four}}  </a> 
-     <a class="square"> &nbsp; {{three}}  </a> 
-     <a class="square"> &nbsp; {{two}}  </a> 
-     <a class="square"> &nbsp; {{one}}  </a>
-     <a class="square"> &nbsp; {{zero}}  </a>  
+     
+     
+     
+    
      
     <!--
     <button  v-on:click="if (target>56) {return;}else{}">56</button>
@@ -89,14 +118,14 @@
     <button  v-on:click="if (target>1){return;}else{}">1</button> -->
      <div v-if="target-sofar==0">
        
-      <p style="color:green">Super du hast nun die Binäre Darstellung von <strong>{{target}}</strong> herausbekommen: <strong>{{target.toString(2)}} </strong></p> 
+      <h2 style="color:green;font-weight:normal;">Super, du hast nun die binäre Stellendarstellung von <strong>{{target}}</strong> herausbekommen: <strong>{{target.toString(2)}} </strong></h2> 
       
     </div>
     <div v-else>
     <br><br> &nbsp; &nbsp; &nbsp;
     </div>
     
-    <div style="display:flex;margin-left:40%;">
+    <div style="display:flex;margin-left:41%;">
     <button class="button" v-on:click="reset" style="margin-left:10px;">
   <img src="@/assets/reset.png" style="height:40%;width:auto" alt="">
 <p>nächste Aufgabe</p>
@@ -276,12 +305,13 @@ export default {
 
 <style scoped>
 .square {
-  height: 20px;
-  width: 20px;
+  
   background-color: white;
   
   margin-left: 13px;
   margin-right: 10px;
+  border: solid black;
+  border-width: thin;
 }
 .sup {
   

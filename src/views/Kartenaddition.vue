@@ -1,9 +1,10 @@
 <template>
     <div v-if="showModal">
     <Modal header="" @close="toggleModal">
-    <p>Du kannst immer zehn Karten einer Sorte gegen eine Karte der nächstgrösseren Sorte tauschen
+    <p> Trage in die Kästchen die Zahl, die durch die Kartendarstellung gebildet wird ein.
+        Du kannst bei der Summe zehn Karten einer Sorte gegen eine Karte der nächstgrösseren Sorte tauschen.
     </p>
-  <video src="@/assets/karttausch.mp4" id="video-container" style="width:70%;height:auto" controls></video>
+  <video src="@/assets/kartenadd.mp4" id="video-container" style="width:70%;height:auto" controls></video>
     </Modal>
 
     </div>
@@ -11,36 +12,38 @@
       <div v-if="showModal1">
         <div v-if="(num1!=sum1)">
         <Modal1 header="dein erster Summand stimmt noch nicht" @close="showModal1=false" style="color:red">
-        
+        <img src="@/assets/wrong.png" alt="">
         </Modal1>
        </div>
 
         <div v-else-if="(num2!=sum2)">
         <Modal1 header="dein zweiter Summand stimmt noch nicht" @close="showModal1=false" style="color:red">
-        
+        <img src="@/assets/wrong.png" alt="">
         </Modal1>
        </div>
 
        <div v-else-if="(num3!=s1sum)">
         <Modal1 header="deine Summe stimmt noch nicht" @close="showModal1=false" style="color:red">
-        
+        <img src="@/assets/wrong.png" alt="">
         </Modal1>
        </div>
 
       <div v-else-if="state">
         <Modal1 header="SUPER!" @close="showModal1=false" style="color:green">
-        <img src="@/assets/alice.png" alt="" style="height:25%;width:25%">
+        <img src="@/assets/right.png" alt="" style="">
         </Modal1>
       </div>
 
       <div v-else>
-        <Modal1 header="das stimmt noch nicht ganz" @close="showModal1=false" style="color:red">
-        
+        <Modal1 header="das ist noch nicht die korrekte Kartendarstellung" @close="showModal1=false" style="color:red">
+        <img src="@/assets/wrong.png" alt="">
         </Modal1>
 
       </div>
 
     </div>
+
+    <!--
     <p class="text" >
         <img src="@/assets/alice.png" alt="" style="display:flex;flex-direction: column;margin-left:48%;height:5%;width:5%">
         Alice hat heute in der Schule die dezimale Kartendarstellung gelernt
@@ -51,10 +54,14 @@
         am Schluss die korrekte Kartendarstellung für die Summe hat.
         Deine Aufgabe ist es herauszufinden, welche zwei Summanden Alice benutzt und ihre Summe nach dem
         Kombinieren anzugeben. Anschliessend tausche die Karten so lange aus, bis wir die korrekte Kartendarstellung haben.
-    </p>
+    </p>-->
+    <h1>Kartenaddition</h1>
+    <h2>Gib die Werte der zwei Summanden und der Summe an, anschliessend bringe die Summe durch Austauschen 
+        in die korrekte Kartendarstellung
+    </h2>
 <br>
     <p style="display:flex;flex-direction: column;float:left;row-gap:10px;margin-left:500px;margin-right:10px">
-      <span><strong><input v-model="num1" placeholder="" style="width:20%"  />:</strong></span>
+      <span><strong><input v-model="num1" placeholder="" style="width:25%"  />:</strong></span>
     <!--{{sum1}}:-->
     </p>
     <div style="display:flex;flex-direction:row">
@@ -62,7 +69,15 @@
     <br>
 
     <!--erste zahl-->
-    
+    <div style="display:flex;flex-direction: column;float:left;row-gap:10px;margin-left:10px;margin-right:10px">
+    <template v-for='index in zt1' :key='index' >
+       <button >
+           10000
+       </button>
+    </template>
+    </div>
+
+
     <div style="display:flex;flex-direction: column;float:left;row-gap:10px;margin-left:10px;margin-right:10px">
     <template v-for='index in t1' :key='index' st>
        <button >
@@ -96,13 +111,24 @@
    </div>
     </div>
     <br>
+    <br>
+    
     <!-- zweite zahl-->
     <div style="display:flex;flex-direction:row">
     
     <p style="display:flex;flex-direction: column;float:left;row-gap:10px;margin-left:500px;margin-right:10px">
-        <span><strong><input v-model="num2" placeholder="" style="width:20%;"  />:</strong></span>
+        <span><strong><input v-model="num2" placeholder="" style="width:25%;"  />:</strong></span>
     <!--{{sum2}}:-->
     </p>
+
+    <div style="display:flex;flex-direction: column;float:left;row-gap:10px;margin-left:10px;margin-right:10px">
+    <template v-for='index in zt2' :key='index' >
+       <button >
+           10000
+       </button>
+    </template>
+    </div>
+
 
     <div style="display:flex;flex-direction: column;float:left;row-gap:10px;margin-left:10px;margin-right:10px">
     <template v-for='index in t2' :key='index'>
@@ -139,20 +165,32 @@
     <br>
     <!-- ergebnis -->
     
-    <p>Kombiniert man alle Karten zusammen erhalten wir:</p>
-    <div style="display:flex;flex-direction:row">
+    <p>Addiert man alle Karten zusammen erhalten wir:</p>
+    <div style="display:flex;flex-direction:row;margin-left:0px">
     
-  <p style="display:flex;flex-direction: column;float:left;row-gap:10px;margin-left:490px;margin-right:10px">
-      <span><strong><input v-model="num3" placeholder="" style="width:20%"  />:</strong></span>
+  <p style="display:flex;flex-direction: column;float:left;row-gap:10px;margin-left:485px;margin-right:10px">
+      <span><strong><input v-model="num3" placeholder="" style="width:25%"  />:</strong></span>
     <!--{{s1sum}}:-->
     </p>
 
-    <div style="display:flex;;flex-direction: column;float:left;row-gap:10px;margin-left:17px;margin-right:10px">
-        <div v-if="(at==0)">
+     <div style="display:flex;;flex-direction: column;float:left;row-gap:10px;margin-left:17px;margin-right:10px">
+        <div v-if="(azt==0)">
                 <button style="background-color:grey;border: solid black;
-    border-width: thin;
-    ">1000</button>
-              </div>
+    border-width: thin;opacity: 0.5;
+    ">10000</button></div>
+    <template v-for='index in (azt)' :key='index'>
+       <button >
+           10000
+       </button>
+    </template>
+    </div>
+
+
+    <div style="display:flex;;flex-direction: column;float:left;row-gap:10px;margin-left:17px;margin-right:10px">
+         <div v-if="(at==0)">
+                <button class="knopf" style="background-color:grey;border: solid black;
+    border-width: thin;opacity: 0.5;
+    ">1000</button></div>
     <template v-for='index in (at)' :key='index'>
        <button >
            1000
@@ -162,8 +200,8 @@
 
     <div style="display:flex;;flex-direction: column;float:left;row-gap:10px;margin-left:10px;margin-right:10px">
         <div v-if="(ah==0)">
-                <button style="background-color:grey;border: solid black;
-    border-width: thin;
+                <button class="knopf" style="background-color:grey;border: solid black;
+    border-width: thin;opacity: 0.5;
     ">100</button></div>
     <template v-for='index in ah' :key='index'>
        <button >
@@ -174,8 +212,8 @@
 
     <div style="display:flex;;flex-direction: column;float:left;row-gap:10px;margin-left:10px;margin-right:10px">
         <div v-if="(az==0)">
-                <button style="background-color:grey;border: solid black;
-    border-width: thin;
+                <button  class="knopf" style="background-color:grey;border: solid black;
+    border-width: thin;opacity: 0.5;
     ">10</button></div>
     <template v-for='index in az' :key='index'>
        <button >
@@ -186,8 +224,8 @@
 
     <div style="display:flex;;flex-direction: column;float:left;row-gap:10px;margin-left:10px;margin-right:10px">
         <div v-if="(ae==0)">
-                <button style="background-color:grey;border: solid black;
-    border-width: thin;
+                <button class="knopf" style="background-color:grey;border: solid black;
+    border-width: thin;opacity: 0.5;
     ">1</button></div>
     <template v-for='index in ae' :key='index'>
        <button >
@@ -202,20 +240,26 @@
     </p>
 
     <div style="display:flex;margin-left:10%;">
-    <button class="button" v-on:click="if(ah>9){ah-=10;at++;fehlermeldung=false;}else{fehlermeldung=true;}" style="display:flex;margin-left:20%">
+    <button class="button" v-on:click="if(at>9){at-=10;azt++;fehlermeldung=false;}else{fehlermeldung=true;}" style="display:flex;margin-left:10%">
+        <p>10000 </p>
+        <img src="@/assets/arrow.png" alt="" style="color:grey;height:40px;width:40px">
+        <p>10 x 1000</p>
+    </button>    
+    <button class="button" v-on:click="if(ah>9){ah-=10;at++;fehlermeldung=false;}else{fehlermeldung=true;}" style="display:flex;margin-left:10%">
+        <p>1000 </p>
+        <img src="@/assets/arrow.png" alt="" style="height:40px;width:40px">
         <p>10 x 100</p>
-        <img src="@/assets/change.png" alt="" style="height:50px;width:50px">
-        <p>1000</p>
     </button>
      <button class="button" v-on:click="if(az>9){az-=10;ah++;fehlermeldung=false;}else{fehlermeldung=true;}" style="display:flex;margin-left:10%">
+        <p>100 </p>
+        <img src="@/assets/arrow.png" alt="" style="height:40px;width:40px">
         <p>10 x 10</p>
-        <img src="@/assets/change.png" alt="" style="height:50px;width:50px">
-        <p>100</p>
     </button>
      <button  class="button" v-on:click="if(ae>9){ae-=10;az++;fehlermeldung=false;}else{fehlermeldung=true;}" style="display:flex;margin-left:10%">
+        <p>10 </p>
+        <img src="@/assets/arrow.png" alt="" style="height:40px;width:40px">
         <p>10 x 1</p>
-        <img src="@/assets/change.png" alt="" style="height:50px;width:50px">
-        <p>10</p>
+        
     </button>
      </div>
   
@@ -224,7 +268,7 @@
     
 
   <div v-if="fehlermeldung">
-       <p style="color:red">du hast brauchst mindestens zehn Karten einer Sorte um zu tauschen</p>
+       <p style="color:red">du brauchst mindestens zehn Karten einer Sorte um zu tauschen</p>
    </div>
    <div v-else>
      <p>&nbsp;</p> 
@@ -275,15 +319,17 @@ export default {
     data(){
         return{
             
-            
-            t1:this.random(1,4),
+            zt1:this.random(1,4),
+            t1:this.random(3,10),
             h1:this.random(3,10),
             z1:this.random(3,10),
             e1:this.random(3,10),
-            t2:this.random(1,4),
+            zt2:this.random(1,4),
+            t2:this.random(3,10),
             h2:this.random(3,10),
             z2:this.random(3,10),
             e2:this.random(3,10),
+            
             s1t:0,
             s1h:0,
             s1z:0,
@@ -301,6 +347,7 @@ export default {
             az:0,
             ah:0,
             at:0,
+            azt:0,
             fehlermeldung:false,
             showModal:false,
             showModal1:false,
@@ -328,15 +375,16 @@ export default {
             this.az=this.z1+this.z2;
             this.ah=this.h1+this.h2;
             this.at=this.t1+this.t2;
+            this.azt=this.zt1+this.zt2;
             this.state=false;
             this.showModal=false;
         },
         calc(){
-            this.sum1=this.t1*1000+this.h1*100+this.z1*10+this.e1
-            this.sum2=this.t2*1000+this.h2*100+this.z2*10+this.e2
+            this.sum1=this.t1*1000+this.h1*100+this.z1*10+this.e1+this.zt1*10000
+            this.sum2=this.t2*1000+this.h2*100+this.z2*10+this.e2+this.zt2*10000
         },
         check(){
-            if (this.ae<10&&this.az<10&&this.ah<10)
+            if (this.ae<10&&this.az<10&&this.ah<10&&this.at<10)
                 this.state=true;
             else this.state=false;
             this.abgabe=true;
@@ -344,11 +392,13 @@ export default {
             
         },
         reset(){
-            this.t1=this.random(1,4),
+            this.zt1=this.random(1,4),
+            this.t1=this.random(3,10),
             this.h1=this.random(3,10),
             this.z1=this.random(3,10),
             this.e1=this.random(3,10),
-            this.t2=this.random(1,4),
+            this.zt2=this.random(1,4),
+            this.t2=this.random(3,10),
             this.h2=this.random(3,10),
             this.z2=this.random(3,10),
             this.e2=this.random(3,10),
@@ -376,6 +426,7 @@ export default {
     border-radius: 10px;
     border: solid black;
     border-width: thin;
+    background-color: rgb(241, 240, 240);
     
     
   }

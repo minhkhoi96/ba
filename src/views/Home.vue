@@ -2,7 +2,7 @@
 
  
   <div >
-      <h1>Einfach Informatik 7-9</h1>
+      <h1>Einfach Informatik 7. bis 9. Klasse</h1>
       <h2>Übungen rund um Zahlendarstellungen </h2>
       <img src="@/assets/start.png" style="height:25%;width:25%;"/>
   </div>
@@ -40,7 +40,7 @@
 
   <router-link to="/greedy">
   <div class="box">
-    Binäre Zahlendarstellung
+    Binäre Stellendarstellung
     <img src="@/assets/binaryf.png" style="width:95%;height:60%">
     <div>
       <img src="@/assets/biber.png" style="height:8%;width:8%;" />
@@ -77,7 +77,7 @@
 
   <router-link to="/dezimal">
   <div class="box">
-    Dezimal zu Binär
+    Dezimalzahl in Binärzahl umwandeln
     <img src="@/assets/binaryf.png" style="width:95%;height:60%">
     <div>
       <img src="@/assets/biber.png" style="height:8%;width:8%;" />
@@ -121,26 +121,27 @@
     <img src="@/assets/tri.png" style="width:44%;height:60%">
     <div>
       <img src="@/assets/biber.png" style="height:8%;width:8%;" />
+      <img src="@/assets/biber.png" style="height:8%;width:8%;" />
        <img src="@/assets/biber.png" style="height:8%;width:8%;" />
     </div>
   </div>
   </router-link>
 
   
-
+    <!--
   <router-link to="/challenge">
   <div class="box" >
-    Münzen tauschen
+    Münzen optimieren
     <div>
       <img src="@/assets/munz.png" style="width:44%;">
-     <!-- <img src="@/assets/coinss.png" style="width:50%;"> --><br>
+    <br>
       <img src="@/assets/biber.png" style="height:8%;width:8%;" />
       
     </div>
   </div>
   </router-link>
 
-
+-->
   
 <!--
  <div class="box">

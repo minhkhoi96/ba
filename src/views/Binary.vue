@@ -1,21 +1,31 @@
 <template>
 
 <div v-if="showModal">
-    <Modal header="hier kommt ein Beispiel vorgelöst" @close="toggleModal">
-      
+    <Modal header="" @close="toggleModal">
+      <p>Bei einer binären Zahl gibt jede Ziffer an, ob die dazugehörige Zweierpotenz dabei ist oder nicht.
+        
+        Dabei steht die Ziffer ganz links für <var>2<sup>0</sup></var> = 1,
+        die zweite Ziffer von links für <var>2<sup>1</sup></var> = 2 und so weiter.
+        <br>
+
+        Die binäre Zahl <strong>1001<h6 style="display:inline;font-size:10px">2</h6></strong> lässt
+        sich somit berechnen durch <strong> 1</strong> x <var>2<sup>3</sup> + <strong>0</strong> x <var>2<sup>2</sup> +
+         </var> </var><strong>0</strong> x <var>2<sup>1</sup></var> +<strong> 1</strong> x <var>2<sup>0</sup></var> = <br>
+         8 + 0 + 0 + 1 = 9
+      </p>
     </Modal>
 
     </div>
      <div v-if="showModal1">
       <div v-if="state">
-        <Modal1 header="richtig" @close="showModal1=false" style="color:green">
-        
+        <Modal1 header="Super!" @close="showModal1=false" style="color:green">
+        <img src="@/assets/right.png" alt="">
         </Modal1>
       </div>
 
       <div v-else>
-        <Modal1 header="falsch" @close="showModal1=false" style="color:red">
-        
+        <Modal1 header="Das stimmt noch nicht ganz" @close="showModal1=false" style="color:red">
+        <img src="@/assets/wrong.png" alt="">
         </Modal1>
 
       </div>
@@ -25,13 +35,13 @@
 
 
   <div >
-    <h2>Binäre Zahlen lesen</h2>
-    <p>Wandle folgende binäre Zahl in ihre Dezimalzahl um</p>
+    <h1>Binäre Zahlen interpretieren</h1>
+    <h2>Wandle folgende binäre Zahl in ihre Dezimalzahl um</h2>
   </div>
 
     <!--<h1>{{val}}</h1>  -->
-  <h3><strong>{{binary}}<h6 style="display:inline;font-size:12px">2</h6></strong></h3> 
-<input class="in" v-model="result" placeholder="Deine Lösung" style="width:10%"  />
+  <h2><strong>{{binary}}<h6 style="display:inline;font-size:12px">2</h6></strong></h2> 
+<input class="in" v-model="result" placeholder="Deine Lösung" style="width:7%"  />
 <br><br><br>
 
   
@@ -82,7 +92,7 @@ export default {
 
   data(){
     return{
-    val: Math.floor(Math.random() * 32) + 1,
+    val: Math.floor(Math.random() * 30) + 1,
     binary:0,
     result:'',
     resultat:false,

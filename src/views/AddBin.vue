@@ -1,56 +1,71 @@
 <template>
     <div v-if="showModal">
-    <Modal header="Hier kommt ein Beispiel vorgelöst" @close="toggleModal">
+    <Modal header="" @close="toggleModal">
+      <p>Das schriftliche binäre Addieren geht fast gleich wie bei normalen Zahlen.
+         Statt ab zehn "rüberzuziehen", ziehen wir hier schon ab zwei.
+      </p>
+       <video src="@/assets/binaryadd.mp4" id="video-container" style="width:70%;height:auto" controls></video>
     </Modal>
 
     </div>
 
        <div v-if="showModal1">
       <div v-if="state">
-        <Modal1 header="richtig" @close="showModal1=false" style="color:green">
-        
+        <Modal1 header="Super!" @close="showModal1=false" style="color:green">
+        <img src="@/assets/right.png" alt="">
         </Modal1>
       </div>
 
       <div v-else>
-        <Modal1 header="falsch" @close="showModal1=false" style="color:red">
-        
+        <Modal1 header="das stimmt noch nicht ganz" @close="showModal1=false" style="color:red">
+        <img src="@/assets/wrong.png" alt="">
         </Modal1>
 
       </div>
 
     </div>
-    <h2>Binäre Addition</h2>
+    <h1>Binäre Addition</h1>
+    <!--
     <p class="text" >
        <img src="@/assets/alice.png" alt="" style="height:5%;width:5%">
         Hilf Alice dabei helfen die beiden binären Zahlen schriftlich zu addieren?<br>
         Falls das Resultat mehr als vier Ziffern benötigen würde, setze einfach einen Tick
         auf das Überschuss Kästchen!
       </p>
-
+    -->
     
  <br><br>
 
   <div class="container" >
     <br>
-    &nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <template v-for='i in 4' :key='i' >
     <strong class="zahl">{{list1[i-1]}} </strong>&nbsp;
   </template>
   
   <br>
   +
+  &nbsp;&nbsp;&nbsp;
   <template v-for='i in 4' :key='i'  >
     <strong class="zahl">{{list2[i-1]}}</strong>&nbsp;
   </template>
-  <hr style="height:1px;width:80px;background-color:black;">
-    &nbsp;&nbsp;
+  <hr style="height:1px;width:100px;background-color:black;">
+    
  
+<template v-if="checked">
+  &nbsp;&nbsp;
+<input class="in" v-model="OfB" placeholder="" style="width:7px;margin-right:5px">
+ </template>
 
+<template v-else>
+  &nbsp;&nbsp;
+<input class="in" v-model="useless" placeholder="" style="width:7px;margin-right:5px;opacity: 0;">
+ </template>
  <input class="in" v-model="msg0" placeholder="" style="width:7px;margin-right:05px">
  <input class="in" v-model="msg1" placeholder="" style="width:7px;margin-right:5px">
  <input class="in" v-model="msg2" placeholder="" style="width:7px;margin-right:5px">
  <input class="in" v-model="msg3" placeholder="" style="width:7px;margin-right:5px">
+ 
 
 <br><br>
 <input type="checkbox" id="checkbox" v-model="checked">
@@ -61,7 +76,7 @@
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <!--{{l0+l1+l2+l3}}-->
 
- <div style="display:flex;margin-left:39%;">
+ <div style="display:flex;margin-left:40%;">
     <button class="button" v-on:click="check()" style="margin-left:10px;">
       <img src="@/assets/test.png" style="height:40%;width:auto" alt="">
     <p>Überprüfen</p>
@@ -120,6 +135,7 @@ export default {
       showModal1:false,
       state:false,
       of:false,
+      OfB:'',
       checked:false
     }
   },
@@ -195,7 +211,7 @@ export default {
         
       //0tes bit
       this.list1[0]= this.rand();
-      this.list2[0]=1-this.list1[0];
+      this.list2[0]=this.rand();
 
        if(this.list1[0]==1 && this.list2[0]==1 && this.of){
         this.of=true
@@ -235,7 +251,7 @@ export default {
       this.showModal=!this.showModal
     },
     reset(){
-      
+      this.OfB='',
       this.msg1='',
       this.msg2='',
       this.msg3='',
@@ -260,9 +276,13 @@ export default {
     },
     check(){
      
-      if(this.msg0==this.l0 &&this.msg1==this.l1&&this.msg2==this.l2 &&this.msg3==this.l3&&this.of==this.checked){
+      if(this.msg0==this.l0 &&this.msg1==this.l1&&this.msg2==this.l2 &&this.msg3==this.l3&&(this.of==this.checked)){
         
         this.state=true;
+        if(this.of){
+          if(this.OfB==0)
+            this.state=false;
+        }
         }
       else{
         
