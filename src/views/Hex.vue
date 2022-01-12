@@ -1,7 +1,7 @@
 <template>
     <div v-if="showModal">
     <Modal header="" @close="toggleModal">
-    Bei hexadeziale Zahlen steht jede Stelle für eine sechzehner Potenz, also
+    Bei hexadezimale Zahlen steht jede Stelle für eine sechzehner Potenz, also
      <var>16<sup>0</sup></var> = 1, <var>16<sup>1</sup></var> = 16, <var>16<sup>2</sup></var> = 256 und so weiter.
      Ausserdem gibt sie an wie oft diese Potenz vorhanden ist. <br>
      Zum Beispiel lässt sich <strong>8F0<h6 style="display:inline;font-size:9px">16</h6></strong> wie folgt berechnen: <br>
@@ -41,7 +41,7 @@
     <br>
     <p>Als Hilfe hast du hier eine Tabelle mit den Hexadezimalzahlen </p>
 
-    <img src="@/assets/hex.png" alt="">
+    <img src="@/assets/hex.png" alt="" style="border:solid-black;border-width: thin;">
     <br><br><br><br><br><br><br><br><br><br>
     
 

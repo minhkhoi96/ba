@@ -20,7 +20,7 @@
       </div>
 
       <div v-else>
-        <Modal1 header="das stimmt noch nicht ganz" @close="showModal1=false" style="color:red">
+        <Modal1 header="Das stimmt noch nicht ganz." @close="showModal1=false" style="color:red">
         <img src="@/assets/wrong.png" alt="">
         </Modal1>
 

@@ -35,7 +35,7 @@
 
 
   <div >
-    <h1>Binäre Zahlen interpretieren</h1>
+    <h1>Binäre Zahlen lesen</h1>
     <h2>Wandle folgende binäre Zahl in ihre Dezimalzahl um</h2>
   </div>
 

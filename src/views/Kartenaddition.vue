@@ -11,19 +11,19 @@
 
       <div v-if="showModal1">
         <div v-if="(num1!=sum1)">
-        <Modal1 header="dein erster Summand stimmt noch nicht" @close="showModal1=false" style="color:red">
+        <Modal1 header="Dein erster Summand stimmt noch nicht." @close="showModal1=false" style="color:red">
         <img src="@/assets/wrong.png" alt="">
         </Modal1>
        </div>
 
         <div v-else-if="(num2!=sum2)">
-        <Modal1 header="dein zweiter Summand stimmt noch nicht" @close="showModal1=false" style="color:red">
+        <Modal1 header="Dein zweiter Summand stimmt noch nicht." @close="showModal1=false" style="color:red">
         <img src="@/assets/wrong.png" alt="">
         </Modal1>
        </div>
 
        <div v-else-if="(num3!=s1sum)">
-        <Modal1 header="deine Summe stimmt noch nicht" @close="showModal1=false" style="color:red">
+        <Modal1 header="Deine Summe stimmt noch nicht." @close="showModal1=false" style="color:red">
         <img src="@/assets/wrong.png" alt="">
         </Modal1>
        </div>
@@ -35,7 +35,7 @@
       </div>
 
       <div v-else>
-        <Modal1 header="das ist noch nicht die korrekte Kartendarstellung" @close="showModal1=false" style="color:red">
+        <Modal1 header="Das ist noch nicht die korrekte Kartendarstellung." @close="showModal1=false" style="color:red">
         <img src="@/assets/wrong.png" alt="">
         </Modal1>
 
@@ -56,7 +56,7 @@
         Kombinieren anzugeben. Anschliessend tausche die Karten so lange aus, bis wir die korrekte Kartendarstellung haben.
     </p>-->
     <h1>Kartenaddition</h1>
-    <h2>Gib die Werte der zwei Summanden und der Summe an, anschliessend bringe die Summe durch Austauschen 
+    <h2>Gib die Werte der zwei Summanden und der Summe an. Anschliessend bringe die Summe durch Austauschen 
         in die korrekte Kartendarstellung
     </h2>
 <br>

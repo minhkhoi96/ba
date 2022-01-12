@@ -30,7 +30,7 @@
     
     
   <h1>Vorrömische Zahlen lesen</h1>
-    <h2>welche Dezimalzahl wird durch diese vorrömische Zahl dargestellt?</h2>
+    <h2>Welche Dezimalzahl wird durch diese vorrömische Zahl dargestellt?</h2>
 
    
 
